@@ -13,11 +13,6 @@ fellows = {
                 "institution": "Villanova University",
                 "grad_date": "May 2023",
                 "courses": "Computer Science"
-            },
-            1: {
-                "institution": "School",
-                "grad_date": "date",
-                "courses": "courses"
             }
         },
         "experience": {

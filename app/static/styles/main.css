@@ -5,7 +5,7 @@ p, h1, h2, h3, h4, h5, h6, button {
 button {
     background: none;
     border: none;
-    width:16.4%;
+    width:10%;
 }
 
 button:hover {
@@ -44,8 +44,8 @@ body {
 
 .nav-logo {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: right;
+    justify-content: right;
 }
 
 .nav-logo img {
@@ -55,7 +55,7 @@ body {
 .nav-content nav {
     display: block;
     width: 100%;
-    text-align: center;
+    text-align: left;
     padding-top: 0px;
     padding-right: 0px;
     color: white;

@@ -3,12 +3,54 @@ from flask import Flask, render_template, request
 from dotenv import load_dotenv
 
 # dictionary of all information about fellows. Will be passed in a render_template call and used in a jinja template.
+# "name": {
+#         "first": "",
+#         "last": "",
+#         "about": "",
+#         "image": "",
+#         "socials": [
+#             {
+#                 "name": "",
+#                 "link": ""
+#             }
+#         ],
+#         "education": [
+#             {
+#                 "institution": "",
+#                 "grad_date": "",
+#                 "courses": "",
+#             }
+#         ],
+#         "experience": [
+#             {
+#                 "position": "",
+#                 "company": "",
+#                 "dates": "",
+#                 "desc": ""
+#             }
+#         ],
+#         "resume": "",
+#         "hobbies": [
+#             {
+#                 "name": "",
+#                 "image": "",
+#                 "desc": ""
+#             }
+            
+#         ]
+#     }
 fellows = {
     "lucy": {
         "first": "Lucy",
         "last": "Wang",
         "about": "Hello! I am Lucy Wang. I'm majoring in Computer Science and minoring in Japanese at Villanova University.",
         "image": "",
+        "socials": [
+            {
+                "name": "LinkedIn",
+                "link": "https://www.linkedin.com/in/lucy-wang-a73267191/"
+            }
+        ],
         "education": [
             {
                 "institution": "Villanova University",
@@ -24,6 +66,7 @@ fellows = {
                 "desc": "I helped out with IT tasks. Troubleshooted problems with office machines (printers and computers) and issues with the local network. Used MySQL, HTML/CSS, Javascript, and PHP for web development of the intranet and external website. Utilized Python to log issues with servers hosting the db, website, intranet, and camera systems.",
             }
         ],
+        "resume": "",
         "hobbies": [
             {
                 "name": "Art",
@@ -47,16 +90,34 @@ fellows = {
         "last": "Yan",
         "about": "",
         "image": "",
+        "socials": [
+            {
+                "name": "",
+                "link": ""
+            }
+        ],
         "education": [
             {
                 "institution": "",
-                "grad_date": ""
+                "grad_date": "",
+                "courses": "",
             }
         ],
         "experience": [
-            
+            {
+                "position": "",
+                "company": "",
+                "dates": "",
+                "desc": ""
+            }
         ],
+        "resume": "",
         "hobbies": [
+            {
+                "name": "",
+                "image": "",
+                "desc": ""
+            }
             
         ]
     }

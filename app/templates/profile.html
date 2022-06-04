@@ -3,8 +3,29 @@
 {% block body %}
 <div class="profile">
     <div id="profile-picture" class="profile-picture">
-        <img src="/static/img/logo.jpg">
+        <img src="/static/img/{{ fellow['image']}}">
     </div>
     <h1>{{ title }}</h1>
+
+</div>
+<div>
+    <h1>About Me</h1>
+    <p>
+        {{ fellow['about'] }}
+    </p>
+
+    <h1>Education</h1>
+        {% for entry in fellow['education'] %}
+            <h2>{{ fellow['education'][entry]['institution'] }}</h2>
+            <p>{{ fellow['education'][entry]['grad_date'] }}</p>
+            <p>{{ fellow['education'][entry]['courses'] }}</p>
+        {% endfor %}
+    <h1>Experience</h1>
+        {% for entry in fellow['experience'] %}
+            <h2>{{ fellow['experience'][entry]['position'] }}</h2>
+            <p>{{ fellow['experience'][entry]['company'] }}</p>
+            <p>{{ fellow['experience'][entry]['dates'] }}</p>
+            <p>{{ fellow['experience'][entry]['desc'] }}</p>
+        {% endfor %}
 </div>
 {% endblock %}

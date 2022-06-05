@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends "base.html" %}
 
 {% block body %}
 <!-- <div class="profile">
@@ -24,21 +24,22 @@
     </div>
 
     <div class="education">
-    <h6>Education</h6>
+        <h6>Education</h6>
         {% for entry in fellow['education'] %}
-            <h7>{{ fellow['education'][entry]['institution'] }} - {{ fellow['education'][entry]['grad_date'] }}</h7>
-            <p>{{ fellow['education'][entry]['courses'] }}</p>
+            <h7>{{ entry['institution'] }} - {{ entry['grad_date'] }}</h7>
+            <p>{{ entry['courses'] }}</p>
         {% endfor %}
     </div>
 
     <div class="experience">
-    <h6>Experience</h6>
+        <h6>Experience</h6>
         {% for entry in fellow['experience'] %}
-            <h7>{{ fellow['experience'][entry]['position'] }}</h7>
-            <p>{{ fellow['experience'][entry]['company'] }}</p>
-            <p>{{ fellow['experience'][entry]['dates'] }}</p>
-            <p>{{ fellow['experience'][entry]['desc'] }}</p>
+            <h7>{{ entry['position'] }}</h7>
+            <p>{{ entry['company'] }}</p>
+            <p>{{ entry['dates'] }}</p>
+            <p>{{ entry['desc'] }}</p>
         {% endfor %}
+
     </div>
 </div>
 {% endblock %}

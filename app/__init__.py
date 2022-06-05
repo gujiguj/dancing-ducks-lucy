@@ -83,6 +83,33 @@ fellows = {
                 "image": "anime.jpg",
                 "desc": "As one might have guessed from my artistic hobby, I like watching anime and reading manga. My favorite manga is Chrono Crusade!"
             }
+        ],
+        "locations": [
+            {
+                "location": "China",
+                "coordinates": [31.224361, 121.469170],
+                "desc": "I visited my relatives in China when I was very young. I went to Shanghai, Xiangtan in Hunan province, and the countryside in Henan province. I don't remember much, but if you're visiting the countryside, definitely be prepared for the mosquitoes!"
+            },
+            {
+                "location": "Taiwan",
+                "coordinates": [22.999727, 120.227028],
+                "desc": "I taught English to elementary and middle school students in various schools in Tainan, Taiwan for two weeks. I know Mandarin Chinese, but it was hard even when I had a teaching partner! At one school, we did not have enough people on our team and I had to teach solo! Still, it was a very exciting experience. Taiwan is a great place to visit!"
+            },
+            {
+                "location": "Alaska",
+                "coordinates": [63.129887, -151.197418],
+                "desc": "I traveled to Alaska with family! The highlight of our trip was visiting Denali National Park, where we got to see Mt. Denali, moose, caribou, bears, and even a few wolves (in the distance). Alaska is full of preserved nature, which is evidenced by the fact bugs still get smashed against car windshields there!"
+            },
+            {
+                "location": "Las Vegas, NV",
+                "coordinates": [36.114647, -115.172813],
+                "desc": "I visited Las Vegas but... before I was 18! So I couldn't touch any of the casinos... Las Vegas is a very shiny place with some good food! I recommend visiting Serendipity for iced hot chocolate."
+            },
+            {
+                "location": "Yellowstone National Park",
+                "coordinates": [44.423691, -110.588516],
+                "desc": "Yellowstone National Park is very cool. The whole park has so many thermal pools that are the most beautiful shade of blue. Our tour guide actually lost his hat in one of the pools (he did not get it back)!"
+            }
         ]
     },
     'mia': {
@@ -110,9 +137,12 @@ fellows = {
         ],
         "hobbies": [
             
+        ],
+        "locations": [
+
         ]
     },
-    'rodrigo': {
+    "rodrigo": {
         "first": "Rodrigo",
         "last": "",
         "github": "",
@@ -151,9 +181,12 @@ fellows = {
                 "image": "",
                 "desc": ""
             }
+        ],
+        "locations": [
+
         ]
     },
-    'kelly': {
+    "kelly": {
         "first": "Kelly",
         "last": "",
         "github": "",
@@ -192,6 +225,9 @@ fellows = {
                 "image": "",
                 "desc": ""
             }
+        ],
+        "locations": [
+
         ]
     },
 }
@@ -210,3 +246,6 @@ def index():
 def show_profile(name):
     return render_template('profile.html', title=fellows[name]['first']+' '+fellows[name]['last'], fellow=fellows[name], url=os.getenv("URL"))
 
+@app.route('/map')
+def show_map():
+    return render_template('map.html', title="Travel", fellows=fellows)

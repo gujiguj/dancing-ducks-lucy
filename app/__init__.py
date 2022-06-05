@@ -43,7 +43,7 @@ fellows = {
     "lucy": {
         "first": "Lucy",
         "last": "Wang",
-        "about": "Hello! I am Lucy Wang. I'm majoring in Computer Science and minoring in Japanese at Villanova University.",
+        "about": "Hi, I'm Lucy Wang! I'm from Newark, DE, and I'm studying Computer Science and Japanese at Villanova University. I like learning things that pique my interest! I also like cats, snoozing, and drawing cute things.",
         "image": "",
         "socials": [
             {
@@ -62,8 +62,8 @@ fellows = {
             {
                 "position": "IT Assistant",
                 "company": "Sepax Technologies, Inc.",
-                "dates": "June 2020 - July 2020, May 2022 - August 2022",
-                "desc": "I helped out with IT tasks. Troubleshooted problems with office machines (printers and computers) and issues with the local network. Used MySQL, HTML/CSS, Javascript, and PHP for web development of the intranet and external website. Utilized Python to log issues with servers hosting the db, website, intranet, and camera systems.",
+                "dates": "July 2020 - August 2020, May 2022 - present",
+                "desc": "Maintained network of office computers, printers, and cameras, company intranet, and company's external marketing website. Used HTML/CSS, PHP, and MySQL to update and add features to the intranet and external website. Carried out general help desk tasks (e.g. setting up new desktops, assigning emails, troubleshooting network issues, and monitoring network security).",
             }
         ],
         "resume": "",
@@ -71,17 +71,17 @@ fellows = {
             {
                 "name": "Art",
                 "image": "",
-                "desc": "I love to draw! I mainly do sketches of characters in an anime style on my iPad. I love drawing for other people, especially if they have cool character designs!"
+                "desc": "I've been drawing in an anime/manga style since I was very young. I like drawing cute designs and designs that I find beautiful. While I often find myself unable to think of what to draw, I become super driven when I'm drawing for other people. Nothing makes me happier than creating for others!"
             },
             {
                 "name": "Gaming",
                 "image": "",
-                "desc": "I'm a casual gamer. I only own a Macbook so I can't play a lot of games, so I just dabble in some mobile games! I mainly play Genshin Impact, but I also play Arknights. As for computer games, I'm currently playing Celeste! I've also casually played Minecraft, Terraria, and Portal.",
+                "desc": "I'm a casual gamer. I only own a Macbook so I can't play a lot of games, so I just dabble in some mobile games! I mainly play an RPG called Genshin Impact, but I also play some of a tower defense game called Arknights. As for computer games, I'm currently playing the indie platformer Celeste! I've also casually played Minecraft, Terraria, and Portal.",
             },
             {
                 "name": "Anime/Manga",
-                "image": "anime.jpg",
-                "desc": "As one might have guessed from my artistic hobby, I like watching anime and reading manga. My favorite manga is Chrono Crusade!"
+                "image": "",
+                "desc": "I love reading manga! And I also enjoy watching anime, but since it takes more time I don't do it as often :( My favorite manga is Chrono Crusade! I also love Witch Hat Atelier and Frieren at the Funeral. And my favorite anime is... it's so hard to choose! Maybe Ouran High School Host Club..."
             }
         ],
         "locations": [
@@ -118,7 +118,7 @@ fellows = {
         "github": "https://github.com/yanbmia",
         "linkedin": "https://www.linkedin.com/in/yanbmia/",
         "resume": "",
-        "about": "Hey, I'm Mia Yan. I'm a incoming sophmore at Binghamton University studying computer science.",
+        "about": "Hey, I'm Mia! I'm originally from Brooklyn, New York. I currently attend Binghamton University studying Computer Science. I'm a creative person. I love anything design and art-related. I've always been an indecisive person, but one thing I always knew I wanted to do is to travel the world.",
         "image": "",
         "education": [
             {
@@ -132,11 +132,20 @@ fellows = {
                 "position": "Operations Intern",
                 "company": "Xenon Health, Inc.",
                 "dates": "July 2021 - November 2021",
-                "desc": " blah blah ",
+                "desc": "I managed several company spreadsheets, conducted crucial business research, and presented various avenues and methods to improve company outreach and communication.",
             }
         ],
         "hobbies": [
-            
+            {
+                "name": "Reading",
+                "image": "",
+                "desc": "I'm a staunch supporter of the library--endless free books! When I was a kid I read a lot, but somewhere in middle school and high school, I grew a distaste for reading. But now I read all the time. My favorite authors are James Baldwin, Dostoevsky, and Murakami. (If you don't have a local library card, what are you doing? You must get one.)"
+            },
+            {
+                "name": "Film",
+                "image": "",
+                "desc": "Is watching movies a hobby? Do I need to present my letterbox account and distinguish between films and movies to prove it? I feel like I can never pick a favorite movie. But I do love all genres--sci-fi, romance, action--maybe everything except thriller.",
+            },
         ],
         "locations": [
             {
@@ -299,6 +308,10 @@ def index():
 @app.route('/fellow/<name>')
 def show_profile(name):
     return render_template('profile.html', title=fellows[name]['first']+' '+fellows[name]['last'], fellow=fellows[name], url=os.getenv("URL"))
+
+@app.route('/hobbies')
+def show_hobby():
+    return render_template('hobbies.html', title="Travel", fellows=fellows)
 
 @app.route('/map')
 def show_map():

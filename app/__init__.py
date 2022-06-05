@@ -43,8 +43,8 @@ fellows = {
     "lucy": {
         "first": "Lucy",
         "last": "Wang",
-        "about": "Hello! I am Lucy Wang. I'm majoring in Computer Science and minoring in Japanese at Villanova University.",
-        "image": "",
+        "about": "Hi, I'm Lucy Wang! I'm from Newark, DE, and I'm studying Computer Science and Japanese at Villanova University. I like learning things that pique my interest! I also like cats, snoozing, and drawing cute things.",
+        "image": "lucy-mlh.jpeg",
         "socials": [
             {
                 "name": "LinkedIn",
@@ -62,8 +62,8 @@ fellows = {
             {
                 "position": "IT Assistant",
                 "company": "Sepax Technologies, Inc.",
-                "dates": "June 2020 - July 2020, May 2022 - August 2022",
-                "desc": "I helped out with IT tasks. Troubleshooted problems with office machines (printers and computers) and issues with the local network. Used MySQL, HTML/CSS, Javascript, and PHP for web development of the intranet and external website. Utilized Python to log issues with servers hosting the db, website, intranet, and camera systems.",
+                "dates": "July 2020 - August 2020, May 2022 - present",
+                "desc": "Maintained network of office computers, printers, and cameras, company intranet, and company's external marketing website. Used HTML/CSS, PHP, and MySQL to update and add features to the intranet and external website. Carried out general help desk tasks (e.g. setting up new desktops, assigning emails, troubleshooting network issues, and monitoring network security).",
             }
         ],
         "resume": "",
@@ -71,17 +71,44 @@ fellows = {
             {
                 "name": "Art",
                 "image": "",
-                "desc": "I love to draw! I mainly do sketches of characters in an anime style on my iPad. I love drawing for other people, especially if they have cool character designs!"
+                "desc": "I've been drawing in an anime/manga style since I was very young. I like drawing cute designs and designs that I find beautiful. While I often find myself unable to think of what to draw, I become super driven when I'm drawing for other people. Nothing makes me happier than creating for others!"
             },
             {
                 "name": "Gaming",
                 "image": "",
-                "desc": "I'm a casual gamer. I only own a Macbook so I can't play a lot of games, so I just dabble in some mobile games! I mainly play Genshin Impact, but I also play Arknights. As for computer games, I'm currently playing Celeste! I've also casually played Minecraft, Terraria, and Portal.",
+                "desc": "I'm a casual gamer. I only own a Macbook so I can't play a lot of games, so I just dabble in some mobile games! I mainly play an RPG called Genshin Impact, but I also play some of a tower defense game called Arknights. As for computer games, I'm currently playing the indie platformer Celeste! I've also casually played Minecraft, Terraria, and Portal.",
             },
             {
                 "name": "Anime/Manga",
-                "image": "anime.jpg",
-                "desc": "As one might have guessed from my artistic hobby, I like watching anime and reading manga. My favorite manga is Chrono Crusade!"
+                "image": "",
+                "desc": "I love reading manga! And I also enjoy watching anime, but since it takes more time I don't do it as often :( My favorite manga is Chrono Crusade! I also love Witch Hat Atelier and Frieren at the Funeral. And my favorite anime is... it's so hard to choose! Maybe Ouran High School Host Club..."
+            }
+        ],
+        "locations": [
+            {
+                "location": "China",
+                "coordinates": [31.224361, 121.469170],
+                "desc": "I visited my relatives in China when I was very young. I went to Shanghai, Xiangtan in Hunan province, and the countryside in Henan province. I don't remember much, but if you're visiting the countryside, definitely be prepared for the mosquitoes!"
+            },
+            {
+                "location": "Taiwan",
+                "coordinates": [22.999727, 120.227028],
+                "desc": "I taught English to elementary and middle school students in various schools in Tainan, Taiwan for two weeks. I know Mandarin Chinese, but it was hard even when I had a teaching partner! At one school, we did not have enough people on our team and I had to teach solo! Still, it was a very exciting experience. Taiwan is a great place to visit!"
+            },
+            {
+                "location": "Alaska",
+                "coordinates": [63.129887, -151.197418],
+                "desc": "I traveled to Alaska with family! The highlight of our trip was visiting Denali National Park, where we got to see Mt. Denali, moose, caribou, bears, and even a few wolves (in the distance). Alaska is full of preserved nature, which is evidenced by the fact bugs still get smashed against car windshields there!"
+            },
+            {
+                "location": "Las Vegas, NV",
+                "coordinates": [36.114647, -115.172813],
+                "desc": "I visited Las Vegas but... before I was 18! So I couldn't touch any of the casinos... Las Vegas is a very shiny place with some good food! I recommend visiting Serendipity for iced hot chocolate."
+            },
+            {
+                "location": "Yellowstone National Park",
+                "coordinates": [44.423691, -110.588516],
+                "desc": "Yellowstone National Park is very cool. The whole park has so many thermal pools that are the most beautiful shade of blue. Our tour guide actually lost his hat in one of the pools (he did not get it back)!"
             }
         ]
     },
@@ -91,8 +118,8 @@ fellows = {
         "github": "https://github.com/yanbmia",
         "linkedin": "https://www.linkedin.com/in/yanbmia/",
         "resume": "",
-        "about": "Hey, I'm Mia Yan. I'm a incoming sophmore at Binghamton University studying computer science.",
-        "image": "",
+        "about": "Hey, I'm Mia! I'm originally from Brooklyn, New York. I currently an undergrad student studying Computer Science. I'm a creative person. I love anything design and art-related. I've always been an indecisive person, but one thing I always knew I wanted to do is to travel the world.",
+        "image": "mia-mlh.jpg",
         "education": [
             {
                 "institution": "Binghamton University",
@@ -105,14 +132,80 @@ fellows = {
                 "position": "Operations Intern",
                 "company": "Xenon Health, Inc.",
                 "dates": "July 2021 - November 2021",
-                "desc": " blah blah ",
+                "desc": "I managed several company spreadsheets, conducted crucial business research, and presented various avenues and methods to improve company outreach and communication.",
             }
         ],
         "hobbies": [
-            
+            {
+                "name": "Reading",
+                "image": "",
+                "desc": "I'm a staunch supporter of the library--endless free books! When I was a kid I read a lot, but somewhere in middle school and high school, I grew a distaste for reading. But now I read all the time. My favorite authors are James Baldwin, Dostoevsky, and Murakami. (If you don't have a local library card, what are you doing? You must get one.)"
+            },
+            {
+                "name": "Film",
+                "image": "",
+                "desc": "Is watching movies a hobby? Do I need to present my letterbox account and distinguish between films and movies to prove it? I feel like I can never pick a favorite movie. But I do love all genres--sci-fi, romance, action--maybe everything except thriller.",
+            },
+        ],
+        "locations": [
+            {
+                "location": "London, UK",
+                "coordinates": [51.506180, -0.120142],
+                "desc": "I swear summer doesn't exist in London. And yes, I will continue to call the Underground the subway."
+            },
+            {
+                "location": "Rainham, UK",
+                "coordinates": [51.366388, 0.611494],
+                "desc": "My aunt and cousin moved here in 2019, so of course, I had to visit. (And by visit I totally don't mean I didn't want to pay hotel fees.)"
+            },
+            {
+                "location": "Trinidad and Tobago",
+                "coordinates": [10.170945, -61.675227],
+                "desc": "My mom is from here! I've been here lots of times to see my family."
+            },
+            {
+                "location": "Miami, FL",
+                "coordinates": [25.771533, -80.192114],
+                "desc": "Went here in August...I've never experienced humidity like this before."
+            },
+            {
+                "location": "Nassau, The Bahamas",
+                "coordinates": [25.044149, -77.354166],
+                "desc": "The ocean here is unreal. I was on a cruise with my family when I was 12 and we stopped here."
+            },
+            {
+                "location": "Belize",
+                "coordinates": [17.507322, -88.203623],
+                "desc": "My mom's uncle's wife is from here! The vibes in Belize are spectacular."
+            },
+            {
+                "location": "Hubei, China",
+                "coordinates": [30.703383, 111.292291],
+                "desc": "I went only went once when I was very little to visit my dad's family. The food was very good though."
+            },
+            {
+                "location": "Shanghai, China",
+                "coordinates": [31.241374, 121.457556],
+                "desc": "This city is amazing. I really want to go back soon."
+            },
+            {
+                "location": "Montreal, Canada",
+                "coordinates": [45.498696, -73.570269],
+                "desc": "One morning, I went to have brunch and the waitress asked me what I wanted to order in French, guess you can say I'm a local. *sarcasm ;)"
+            },
+            {
+                "location": "Southampton, NY",
+                "coordinates": [40.884612, -72.393004],
+                "desc": "Unfortunately, the Hamptons aren't overhyped. It's really fun here in the summer."
+            },
+            {
+                "location": "Boston, MA",
+                "coordinates": [42.358876, -71.056763],
+                "desc": "When I was a kid, my family used to take a lot of random road trips. But I'm marking Boston down because I have some funny childhood photos here."
+            },
         ]
     },
-    'rodrigo': {
+    "rodrigo": {
         "first": "Rodrigo",
         "last": "",
         "github": "",
@@ -151,9 +244,12 @@ fellows = {
                 "image": "",
                 "desc": ""
             }
+        ],
+        "locations": [
+
         ]
     },
-    'kelly': {
+    "kelly": {
         "first": "Kelly",
         "last": "",
         "github": "",
@@ -192,6 +288,9 @@ fellows = {
                 "image": "",
                 "desc": ""
             }
+        ],
+        "locations": [
+
         ]
     },
 }
@@ -210,3 +309,10 @@ def index():
 def show_profile(name):
     return render_template('profile.html', title=fellows[name]['first']+' '+fellows[name]['last'], fellow=fellows[name], url=os.getenv("URL"))
 
+@app.route('/hobbies')
+def show_hobby():
+    return render_template('hobbies.html', title="Travel", fellows=fellows)
+
+@app.route('/map')
+def show_map():
+    return render_template('map.html', title="Travel", fellows=fellows)

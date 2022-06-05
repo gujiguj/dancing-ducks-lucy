@@ -3,7 +3,7 @@ h1 {
     color: white;
     font-size: 100px;
     text-align: right;
-    padding-right: 50px;
+    padding-right: 75px;
     padding-top: 100px;
     margin: 0px;
 }
@@ -12,14 +12,13 @@ h2 {
     color: #182EA4;
     font-size: 30px;
     text-align: right;
-    padding-right: 50px;
+    padding-right: 75px;
     margin: 0px;
 }
 h3 {
     font-family: 'JetBrains Mono', monospace;
     color: #182EA4;
     font-size: 50px;
-    padding-left: 5%;
     font-weight: 800;
     margin: 0px;
     position: absolute;
@@ -131,36 +130,6 @@ body {
     text-decoration: none;
 }
 
-.profile {
-    background-color: #7689F1 !important;
-    text-align: center;
-    height: 320px;
-    margin-bottom: 50px;
-}
-
-.profile h1 {
-        font-size: 50px;
-        font-weight: 700;
-        color: white;
-}
-
-.profile img {
-        border-radius: 50%;
-        max-width: 100%;
-        max-height: 100%;
-        margin-left: auto;
-        margin-right: auto;
-        padding: 30px;   
-}
-
-.profile .profile-picture {
-    margin-bottom: 30px;
-    height: 200px;
-}
-.profile-picture:hover .overlay {
-    color:#008CBA;
-}
-
 .banner {
     padding: 20px 0px 50px 0px;
     height: 150px;
@@ -182,7 +151,13 @@ body {
 
 .about {
     width: 100%;
-    height: 300px;
+    height: fit-content;
+    padding-bottom: 50px;
+}
+
+.moreabout {
+    margin-left: 350px;
+    margin-right: 50px;
 }
 
 .education {
@@ -212,15 +187,58 @@ body {
     background-color: #FECD6A;
 }
 
+  .hobbie {
+    width: 100%;
+    padding: 30px 0px 30px 30px;
+  }
+
+  h8 {
+    font-family: 'JetBrains Mono', monospace;
+    color: white;
+    font-size: 50px;
+  }
+
+  .title {
+    width: 100%;
+    height: fit-content;
+    padding-bottom: 50px;
+  }
+
+.profilepic {
+    border-radius: 25px;
+    height: 250px;
+    width: 250px;
+    margin-top: 30px;
+}
+
+.team {
+    width: 100%;
+    height: fit-content;
+    padding: 30px 0px 30px 0px;
+    margin-left: 7.5%;
+    margin-right: 7.5%;
+    padding-bottom: 300px;
+
+}
+
+.proimage {
+    height: 250px;
+    width: 250px;
+    border-radius: 25px;
+    margin-right: 5%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
 .container {
     position: relative;
-    width: 50%;
-  }
-  
-  .image {
-    display: block;
-    width: 200px;
-    height: 200px;
+    width: 250px;
+    height: 250px;
+    border-radius: 25px;
+    float:left;
+    margin-right: 5%;
+    margin-top: 20px;
+    margin-bottom: 20px;
   }
   
   .overlay {
@@ -229,11 +247,14 @@ body {
     bottom: 0;
     left: 0;
     right: 0;
-    height: 200px;
-    width: 200px;
+    height: 100%;
+    width: 100%;
     opacity: 0;
     transition: .5s ease;
-    background-color: #008CBA;
+    background-color: #FECD6A;
+    margin-top: 20px;
+    border-radius: 25px;
+    
   }
   
   .container:hover .overlay {
@@ -241,8 +262,9 @@ body {
   }
   
   .text {
+    font-family: 'JetBrains Mono', monospace;
     color: white;
-    font-size: 20px;
+    font-size: 50px;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -251,3 +273,8 @@ body {
     transform: translate(-50%, -50%);
     text-align: center;
   }
+
+.teamtext {
+    padding-bottom: 50px;
+    width: 100%;
+}

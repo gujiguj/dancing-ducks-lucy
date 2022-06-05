@@ -44,7 +44,7 @@ fellows = {
         "first": "Lucy",
         "last": "Wang",
         "about": "Hi, I'm Lucy Wang! I'm from Newark, DE, and I'm studying Computer Science and Japanese at Villanova University. I like learning things that pique my interest! I also like cats, snoozing, and drawing cute things.",
-        "image": "",
+        "image": "lucy-mlh.jpeg",
         "socials": [
             {
                 "name": "LinkedIn",
@@ -118,8 +118,8 @@ fellows = {
         "github": "https://github.com/yanbmia",
         "linkedin": "https://www.linkedin.com/in/yanbmia/",
         "resume": "",
-        "about": "Hey, I'm Mia! I'm originally from Brooklyn, New York. I currently attend Binghamton University studying Computer Science. I'm a creative person. I love anything design and art-related. I've always been an indecisive person, but one thing I always knew I wanted to do is to travel the world.",
-        "image": "",
+        "about": "Hey, I'm Mia! I'm originally from Brooklyn, New York. I currently an undergrad student studying Computer Science. I'm a creative person. I love anything design and art-related. I've always been an indecisive person, but one thing I always knew I wanted to do is to travel the world.",
+        "image": "mia-mlh.jpg",
         "education": [
             {
                 "institution": "Binghamton University",

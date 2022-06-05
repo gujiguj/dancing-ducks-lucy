@@ -139,7 +139,61 @@ fellows = {
             
         ],
         "locations": [
-
+            {
+                "location": "London, UK",
+                "coordinates": [51.506180, -0.120142],
+                "desc": "I swear summer doesn't exist in London. And yes, I will continue to call the Underground the subway."
+            },
+            {
+                "location": "Rainham, UK",
+                "coordinates": [51.366388, 0.611494],
+                "desc": "My aunt and cousin moved here in 2019, so of course, I had to visit. (And by visit I totally don't mean I didn't want to pay hotel fees.)"
+            },
+            {
+                "location": "Trinidad and Tobago",
+                "coordinates": [10.170945, -61.675227],
+                "desc": "My mom is from here! I've been here lots of times to see my family."
+            },
+            {
+                "location": "Miami, FL",
+                "coordinates": [25.771533, -80.192114],
+                "desc": "Went here in August...I've never experienced humidity like this before."
+            },
+            {
+                "location": "Nassau, The Bahamas",
+                "coordinates": [25.044149, -77.354166],
+                "desc": "The ocean here is unreal. I was on a cruise with my family when I was 12 and we stopped here."
+            },
+            {
+                "location": "Belize",
+                "coordinates": [17.507322, -88.203623],
+                "desc": "My mom's uncle's wife is from here! The vibes in Belize are spectacular."
+            },
+            {
+                "location": "Hubei, China",
+                "coordinates": [30.703383, 111.292291],
+                "desc": "I went only went once when I was very little to visit my dad's family. The food was very good though."
+            },
+            {
+                "location": "Shanghai, China",
+                "coordinates": [31.241374, 121.457556],
+                "desc": "This city is amazing. I really want to go back soon."
+            },
+            {
+                "location": "Montreal, Canada",
+                "coordinates": [45.498696, -73.570269],
+                "desc": "One morning, I went to have brunch and the waitress asked me what I wanted to order in French, guess you can say I'm a local. *sarcasm ;)"
+            },
+            {
+                "location": "Southampton, NY",
+                "coordinates": [40.884612, -72.393004],
+                "desc": "Unfortunately, the Hamptons aren't overhyped. It's really fun here in the summer."
+            },
+            {
+                "location": "Boston, MA",
+                "coordinates": [42.358876, -71.056763],
+                "desc": "When I was a kid, my family used to take a lot of random road trips. But I'm marking Boston down because I have some funny childhood photos here."
+            },
         ]
     },
     "rodrigo": {

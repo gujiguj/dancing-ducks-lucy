@@ -135,12 +135,12 @@ fellows = {
         "hobbies": [
             {
                 "name": "Reading",
-                "image": "",
+                "image": "/static/img/reading.jpeg",
                 "desc": "I'm a staunch supporter of the library--endless free books! When I was a kid I read a lot, but somewhere in middle school and high school, I grew a distaste for reading. But now I read all the time. My favorite authors are James Baldwin, Dostoevsky, and Murakami. (If you don't have a local library card, what are you doing? You must get one.)"
             },
             {
                 "name": "Film",
-                "image": "",
+                "image": "/static/img/film.jpeg",
                 "desc": "Is watching movies a hobby? Do I need to present my letterbox account and distinguish between films and movies to prove it? I feel like I can never pick a favorite movie. But I do love all genres--sci-fi, romance, action--maybe everything except thriller.",
             },
         ],
@@ -228,12 +228,12 @@ fellows = {
         "hobbies": [
             {
                 "name": "Reading",
-                "image": "",
+                "image": "/static/img/books.jpeg",
                 "desc": "I'm mainly interested finance, geopolitics and phylosophy"
             },
             {
                 "name": "Music Production",
-                "image": "",
+                "image": "/static/img/ableton.png",
                 "desc": "On free times I write electronic music",
             }
         ],

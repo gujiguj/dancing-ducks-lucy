@@ -4,6 +4,22 @@
 <div class="hobbies">
     <h6> OUR HOBBIES </h6>
     
+    {% for fellow in fellows %}
+        <h1>{{ fellows[fellow]['first'] }}</h1>
+        <table>
+            {% for hobby in fellows[fellow]['hobbies'] %}
+                <tr>
+                    <td>
+                        <h2>hobby['name']</h2>
+                        hobby['desc']
+                    </td>
+                    <td>
+                        hobby['img']
+                    </td>
+                </tr>
+            {% endfor %}
+        </table>
+    {% endfor %}
 </div>
 
 {% endblock %}

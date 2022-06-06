@@ -207,7 +207,6 @@ body {
     height:auto;
     border-radius: 50%;
 }
-
 .box {
     background-color: white;
     border-radius: 8px;
@@ -302,6 +301,7 @@ h8 {
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     text-align: center;
+  
 }
 
 .teamtext {

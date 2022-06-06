@@ -6,19 +6,32 @@
     
     {% for fellow in fellows %}
         <h1>{{ fellows[fellow]['first'] }}</h1>
-        <table>
-            {% for hobby in fellows[fellow]['hobbies'] %}
+        <!--use namespace to change variable within loop; with jinja, assignments within loops do not outlive its scope-->
+        {% set ns = namespace(alternate = false) %}
+        {% for hobby in fellows[fellow]['hobbies'] %}
+            <table>
                 <tr>
-                    <td>
-                        <h2>hobby['name']</h2>
-                        hobby['desc']
-                    </td>
-                    <td>
-                        hobby['img']
-                    </td>
+                    {% if ns.alternate %}
+                        <td>
+                            <img src="{{ hobby['image'] }}">
+                        </td>
+                        <td>
+                            <h2>{{ hobby['name'] }}</h2>
+                            {{ hobby['desc'] }}
+                        </td>
+                    {% else %}
+                        <td>
+                            <h2>{{ hobby['name'] }}</h2>
+                            {{ hobby['desc'] }}
+                        </td>
+                        <td>
+                            <img src="{{ hobby['image'] }}">
+                        </td>
+                    {% endif %}
                 </tr>
-            {% endfor %}
-        </table>
+            </table>
+            {% set ns.alternate = not ns.alternate %}
+        {% endfor %}
     {% endfor %}
 </div>
 

@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends "base.html" %}
 
 {% block body %}
 <!-- <div class="profile">
@@ -11,35 +11,39 @@
         {{ fellow['about'] }}
     </p> -->
     <div class="about">
-        <p style="float: left; margin: 50px;"><img src="/static/img/{{ fellow['image']}}" height="200px" width="200px"> </p>
+        <table style="margin-left: 50px;">
+        <tr>
+        <td><img src="{{ fellow['image']}}" class="profilepic"> </td>
         <br><br><br>
-        <h6> Meet {{ title }} </h6>
-        <p>{{ fellow['about'] }}</p>
-
-        <div>
-            <a href="{{ fellow['github'] }}" class="box"><h7> github</h7></a>
-            <a href="{{ fellow['linkedin'] }}" class="box"><h7> linkedin</h7></a>
-            <a href="{{ fellow['linkedin'] }}" class="box"><h7> resume</h7></a>
+        <td>
+        <div class="moreabout">
+            <h6> Meet {{ title }} </h6>
+            <p>{{ fellow['about'] }}</p>
+                <a href="{{ fellow['github'] }}" class="box"><h7> github</h7></a>
+                <a href="{{ fellow['linkedin'] }}" class="box"><h7> linkedin</h7></a>
+                <a href="{{ fellow['linkedin'] }}" class="box"><h7> resume</h7></a>
         </div>
+    </td>
+    </tr>
+    </table>
     </div>
 
     <div class="education">
-    <h6>Education</h6>
+        <h6>Education</h6>
         {% for entry in fellow['education'] %}
-            <h7>{{ fellow['education'][entry]['institution'] }} - {{ fellow['education'][entry]['grad_date'] }}</h7>
-            <p>{{ fellow['education'][entry]['courses'] }}</p>
+            <h7>{{ entry['institution'] }} - {{ entry['grad_date'] }}</h7>
+            <p>{{ entry['courses'] }}</p>
         {% endfor %}
     </div>
 
     <div class="experience">
-    <h6>Experience</h6>
-        {% for entry in fellow['experience'] %}
-            <h7>{{ fellow['experience'][entry]['position'] }}
-            </h7>
-            <p>{{ fellow['experience'][entry]['company'] }}</p>
-            <p>{{ fellow['experience'][entry]['dates'] }}</p>
-            <p>{{ fellow['experience'][entry]['desc'] }}</p>
-        {% endfor %}
+        <h6>Experience</h6>
+            {% for entry in fellow['experience'] %}
+                <h7>{{ entry['position'] }} - {{ entry['company'] }}</h7>
+                <p>{{ entry['dates'] }}</p>
+                <p style="margin-right:50px">{{ entry['desc'] }}</p>
+                <!--<p style="float: left; margin-left: 50px; margin-top: 30px;"><img src="{{ fellow['image']}}" class="profilepic"> </p>-->
+            {% endfor %}
     </div>
 </div>
 {% endblock %}

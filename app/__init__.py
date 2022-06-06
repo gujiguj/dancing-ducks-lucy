@@ -267,46 +267,93 @@ fellows = {
     },
     "kelly": {
         "first": "Kelly",
-        "last": "",
-        "github": "",
-        "linkedin": "",
+        "last": "Chen",
+        "github": "https://github.com/Kelly0921",
+        "linkedin": "https://www.linkedin.com/in/kellychen0921/",
         "resume": "",
-        "about": "",
+        "about": "Hey! I'm Kelly from Plano, TX. I’m known as the one who's always driven to learn new skills, and I'm always looking forward to challenges to help me grow beyond my limits. I enjoy researching the latest technology trends, exploring different software, and sharing these ideas with others. I'm also passionate about entreprenurship, and I'm currently working on my own project building a unique payment gateway service. During my free time, as a woman in STEM, I’m always active in multiple Women in STEM communities, I often participate in workshops and other conferences to advocate for girls in STEM and educate potential students on their path to STEM.",
         "image": "",
         "education": [
             {
-                "institution": "",
-                "grad_date": "",
-                "courses": ""
+                "institution": "Lehigh University",
+                "grad_date": "May 2025",
+                "courses": "Computer Science and Business"
             }
         ],
         "experience": [
             {
-                "position": "",
-                "company": "",
-                "dates": "",
-                "desc": "",
+                "position": "Managing Editor for Clubs and Organizations & Photographer",
+                "company": "Epitome Yearbook",
+                "dates": "Jan 2022 - Present",
+                "desc": "- Communicated with clubs/organizations and campus partners for photos and copy to complete spreads. - Assigned clubs to spaces on the ladder and worked with Editor in Chief to assign associate editors to layouts. - Student liaison with the Office of Student Engagement Office. - Helped to recruit students at Club Expo",
+            },
+            {
+                "position": "Marketing Intern",
+                "company": "rThreat",
+                "dates": "Feb 2021 - Jun 2021",
+                "desc": "- Implemented digital and online marketing tactics to drive new subscriber acquisitions and retain existing subscribers. - Designed social media content using prior marketing templates and customized WordPress blogs to boost search engine optimization (SEO). - Helped to reevaluate the business transformation capabilities for a unique market positioning on breach and attack emulation. - Conducted research and assembled cybersecurity resources for 7 blogs. - Gained access to CISO interviews & Breach and Attack Emulation Lab"
+            },
+            {
+                "position": "Chief Operating Officer",
+                "company": "Online Impacts",
+                "dates":"Aug 2020 - May 2021",
+                "desc": "- Revamped the method to oversee a group of remote volunteers through Trello and Slack. - Proposed new marketing ideas that focused on digital marketing to raise publicity and helped to get featured on 5 news platforms. - Developed a partnership contract used to grow strategic partnerships and helped to outreach to potential partners. - Counseled nonprofit organizations about their websites and presented requests to the web development team. - Engaged in the bi-weekly technological innovation meeting to brainstorm ideas and served as the meeting minute taker",
+            },
+            {
+                "position":"Staff (Chinese Fluency Project Leader / Coding Intern / Marketing & Communications Intern)",
+                "company":"Break Diving",
+                "dates":"Dec 2018 - Nov 2020",
+                "desc":"- Modified the action menu design and coded additional features on the community and organization site. - Tested team member's pull requests for proper functionality, accessibility, and presentation regularly. - Designed 14 dive certificate templates used to certify 50+ dives and managed the dive certification program. - Oversaw the Chinese chatroom of 30+ members - encouraged member participation regularly and provided assistance to members in need",
             }
         ],
         "hobbies": [
             {
-                "name": "",
+                "name": "Boardgames",
                 "image": "",
-                "desc": ""
+                "desc": "A pretty new habit for me. It's a great way to make new friends and have fun. Some of the boardgames that I play include Ticket to Ride, Rival Restaurant, Mahjong, Exploding Kittens."
             },
             {
-                "name": "",
+                "name": "Sketching",
                 "image": "",
-                "desc": "",
+                "desc": "I like drawing sometimes when I'm free. It helps me focus and concentrate on doing one task. ",
             },
             {
-                "name": "",
+                "name": "Planning/Organizing",
                 "image": "",
-                "desc": ""
+                "desc": "I find satisfaction when I plan out my day and accomplish my goals. I try my best to give myself sometimes to reflect on myself everyday, every week, every month, and every year. It helps me to focus on my goals and stay on track."
+            },
+            {
+                "name": "Movie (Especially Crime Documentaries)",
+                "image": "",
+                "desc": "I enjoy watching crime documentaries and even listening to true-crime podcasts."
             }
         ],
         "locations": [
-
+            {
+                "location": "Sichuan, China",
+                "coordinates": [30.6509, 104.0757],
+                "desc": "I went to Sichuan at a young age and stayed there for 11 years. If you don't know it, it's the home of pandas and full of spicy hotpots!"
+            },
+            {
+                "location": "Henan, China",
+                "coordinates": [34.7657, 113.7532],
+                "desc": "This is where my dad is from, so my family would go visit during the summer before we moved back to U.S."
+            },
+            {
+                "location": "Las Vegas, United States",
+                "coordinates": [36.1716, 115.1391°],
+                "desc": "Went during winter break, and I had a lot of fun there visiting different hotels!"
+            },
+            {
+                "location": "Walt Disney World, United States",
+                "coordinates": [28.3772, 81.5707],
+                "desc": "A trip full of magic! Super fun watching the performances and meeting the characters, but the line is TOOOO long."
+            },
+            {
+                "location": "San Antonio, United States",
+                "coordinates": [29.4252, 98.4946],
+                "desc": "Very beautiful place full of Texas history."
+            },
         ]
     },
 }

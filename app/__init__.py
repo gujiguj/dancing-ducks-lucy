@@ -285,25 +285,25 @@ fellows = {
                 "position": "Managing Editor for Clubs and Organizations & Photographer",
                 "company": "Epitome Yearbook",
                 "dates": "Jan 2022 - Present",
-                "desc": "- Communicated with clubs/organizations and campus partners for photos and copy to complete spreads. - Assigned clubs to spaces on the ladder and worked with Editor in Chief to assign associate editors to layouts. - Student liaison with the Office of Student Engagement Office. - Helped to recruit students at Club Expo",
+                "desc": "-Communicated with clubs/organizations and campus partners for photos and copy to complete spreads. -Assigned clubs to spaces on the ladder and worked with Editor in Chief to assign associate editors to layouts. -Student liaison with the Office of Student Engagement Office. -Helped to recruit students at Club Expo.",
             },
             {
                 "position": "Marketing Intern",
                 "company": "rThreat",
                 "dates": "Feb 2021 - Jun 2021",
-                "desc": "- Implemented digital and online marketing tactics to drive new subscriber acquisitions and retain existing subscribers. - Designed social media content using prior marketing templates and customized WordPress blogs to boost search engine optimization (SEO). - Helped to reevaluate the business transformation capabilities for a unique market positioning on breach and attack emulation. - Conducted research and assembled cybersecurity resources for 7 blogs. - Gained access to CISO interviews & Breach and Attack Emulation Lab"
+                "desc": "-Implemented digital and online marketing tactics to drive new subscriber acquisitions and retain existing subscribers. -Designed social media content using prior marketing templates and customized WordPress blogs to boost search engine optimization (SEO). -Helped to reevaluate the business transformation capabilities for a unique market positioning on breach and attack emulation. -Conducted research and assembled cybersecurity resources for 7 blogs. -Gained access to CISO interviews & Breach and Attack Emulation Lab."
             },
             {
                 "position": "Chief Operating Officer",
                 "company": "Online Impacts",
                 "dates":"Aug 2020 - May 2021",
-                "desc": "- Revamped the method to oversee a group of remote volunteers through Trello and Slack. - Proposed new marketing ideas that focused on digital marketing to raise publicity and helped to get featured on 5 news platforms. - Developed a partnership contract used to grow strategic partnerships and helped to outreach to potential partners. - Counseled nonprofit organizations about their websites and presented requests to the web development team. - Engaged in the bi-weekly technological innovation meeting to brainstorm ideas and served as the meeting minute taker",
+                "desc": "-Revamped the method to oversee a group of remote volunteers through Trello and Slack. -Proposed new marketing ideas that focused on digital marketing to raise publicity and helped to get featured on 5 news platforms. -Developed a partnership contract used to grow strategic partnerships and helped to outreach to potential partners. -Counseled nonprofit organizations about their websites and presented requests to the web development team. -Engaged in the bi-weekly technological innovation meeting to brainstorm ideas and served as the meeting minute taker.",
             },
             {
                 "position":"Staff (Chinese Fluency Project Leader / Coding Intern / Marketing & Communications Intern)",
                 "company":"Break Diving",
                 "dates":"Dec 2018 - Nov 2020",
-                "desc":"- Modified the action menu design and coded additional features on the community and organization site. - Tested team member's pull requests for proper functionality, accessibility, and presentation regularly. - Designed 14 dive certificate templates used to certify 50+ dives and managed the dive certification program. - Oversaw the Chinese chatroom of 30+ members - encouraged member participation regularly and provided assistance to members in need",
+                "desc":"-Modified the action menu design and coded additional features on the community and organization site. -Tested team member's pull requests for proper functionality, accessibility, and presentation regularly. -Designed 14 dive certificate templates used to certify 50+ dives and managed the dive certification program. -Oversaw the Chinese chatroom of 30+ members. -encouraged member participation regularly and provided assistance to members in need.",
             }
         ],
         "hobbies": [
@@ -314,17 +314,17 @@ fellows = {
             },
             {
                 "name": "Sketching",
-                "image": "",
+                "image": "/static/img/kelly-drawing.png",
                 "desc": "I like drawing sometimes when I'm free. It helps me focus and concentrate on doing one task. ",
             },
             {
                 "name": "Planning/Organizing",
-                "image": "",
+                "image": "/static/img/workspace.png",
                 "desc": "I find satisfaction when I plan out my day and accomplish my goals. I try my best to give myself sometimes to reflect on myself everyday, every week, every month, and every year. It helps me to focus on my goals and stay on track."
             },
             {
                 "name": "Movie (Especially Crime Documentaries)",
-                "image": "",
+                "image": "/static/img/kelly-film.png",
                 "desc": "I enjoy watching crime documentaries and even listening to true-crime podcasts."
             }
         ],

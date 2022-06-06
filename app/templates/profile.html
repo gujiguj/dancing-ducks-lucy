@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+{% block body %}
+<!-- <div class="profile">
+    <div id="profile-picture" class="profile-picture">
+        <img src="/static/img/{{ fellow['image']}}">
+    </div>
+</div> -->
+<div>
+    <!-- <p> Meet {{ title }}
+        {{ fellow['about'] }}
+    </p> -->
+    <div class="about">
+        <table style="margin-left: 50px;">
+        <tr>
+        <td><img src="{{ fellow['image']}}" class="profilepic"> </td>
+        <br><br><br>
+        <td>
+        <div class="moreabout">
+            <h6> Meet {{ title }} </h6>
+            <p>{{ fellow['about'] }}</p>
+                <a href="{{ fellow['github'] }}" class="box"><h7> github</h7></a>
+                <a href="{{ fellow['linkedin'] }}" class="box"><h7> linkedin</h7></a>
+                <a href="{{ fellow['linkedin'] }}" class="box"><h7> resume</h7></a>
+        </div>
+    </td>
+    </tr>
+    </table>
+    </div>
+
+    <div class="education">
+        <h6>Education</h6>
+        {% for entry in fellow['education'] %}
+            <h7>{{ entry['institution'] }} - {{ entry['grad_date'] }}</h7>
+            <p>{{ entry['courses'] }}</p>
+        {% endfor %}
+    </div>
+
+    <div class="experience">
+        <h6>Experience</h6>
+        <table>
+            {% for entry in fellow['experience'] %}
+                <tr>
+                    <td style="vertical-align: top;"><img style="height:150px; width:150px" src="{{ entry['image'] }}"></td>
+                    <td>
+                        <h7>{{ entry['position'] }}</h7>
+                        <p>{{ entry['company'] }}</p>
+                        <p>{{ entry['dates'] }}</p>
+                        <p>{{ entry['desc'] }}</p>
+                        <!--<p style="float: left; margin-left: 50px; margin-top: 30px;"><img src="{{ fellow['image']}}" class="profilepic"> </p>-->
+                    </td>
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+</div>
+{% endblock %}

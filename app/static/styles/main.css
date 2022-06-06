@@ -1,19 +1,83 @@
-p, h1, h2, h3, h4, h5, h6, button {
-    font-family: "Roboto", serif;
+h1 {
+    font-family: 'Encode Sans', sans-serif;
+    color: white;
+    font-size: 100px;
+    text-align: right;
+    padding-right: 75px;
+    padding-top: 100px;
+    margin: 0px;
+}
+h2 {
+    font-family: 'Encode Sans', sans-serif;
+    color: #182EA4;
+    font-size: 30px;
+    text-align: right;
+    padding-right: 75px;
+    margin: 0px;
+}
+h3 {
+    font-family: 'JetBrains Mono', monospace;
+    color: #182EA4;
+    font-size: 50px;
+    font-weight: 800;
+    margin: 0px;
+    position: absolute;
+}
+h4 {
+    font-family: 'JetBrains Mono', monospace;
+    color: #182EA4;
+    font-size: 50px;
+}
+h5 {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 20px;
+}
+h6 {
+    font-family: 'Encode Sans', sans-serif;
+    color: #182EA4;
+    font-size: 50px;
+    margin: 0px;
+}
+h7 {
+    font-family: 'JetBrains Mono', monospace;
+    color: #182EA4;
+    font-size: 25px;
+    font-weight: 500;
+    margin: 0px;
+    padding-bottom: 10px;
+}
+p {
+    font-family: 'JetBrains Mono', monospace;
+    color: white;
+    font-size: 20px;
+}
+h7 {
+    font-family: 'JetBrains Mono', monospace;
+    color:#182EA4 ;
+    font-size: 20px;
 }
 
+a {
+    color: white;  
+}
+a:link {
+    text-decoration: none;
+}
+a:hover {
+    color: #182EA4;
+}
 button {
     background: none;
     border: none;
     width:10%;
 }
 
-button:hover {
-    background-color: #4183de;
+pre {
+    padding: 0 0 0 0;
 }
 
 body {
-    background-color: #f5f5f9;
+    background-color: #7689F1;
     background-size: cover;
     width: auto; 
     overflow-x: hidden;
@@ -24,11 +88,11 @@ body {
 .nav-bar {
     width: 100%;
     display: inline-block;
-    background-color: #1C539F;
+    background-color: #7689F1;
     font-family: "Roboto", serif;
     font-weight: 700 !important;
-    padding-top: 10px;
-    border-bottom: medium solid #18488b;
+    padding-top: 0px;
+    border-bottom: medium solid #7689F1;
 }
 
 .nav-content .logo-touch-target {
@@ -66,38 +130,10 @@ body {
     text-decoration: none;
 }
 
-.profile {
-    background-color: #1d539f !important;
-    text-align: center;
-    height: 320px;
-    margin-bottom: 50px;
-}
-
-.profile h1 {
-        font-size: 50px;
-        font-weight: 700;
-        color: white;
-}
-
-.profile img {
-        border-radius: 50%;
-        max-width: 100%;
-        max-height: 100%;
-        margin-left: auto;
-        margin-right: auto;
-        display: block;        
-        padding: 20px;
-}
-
-.profile .profile-picture {
-    margin-bottom: 30px;
-    height: 200px;
-}
-
 .banner {
     padding: 20px 0px 50px 0px;
     height: 150px;
-    background-color: #1d539f;
+    background-color: #7689F1;
 }
 
 .banner .logo {
@@ -115,7 +151,13 @@ body {
 
 .about {
     width: 100%;
-    height: 300px;
+    height: fit-content;
+    padding-bottom: 50px;
+}
+
+.moreabout {
+    margin-left: 50px;
+    margin-right: 50px;
 }
 
 .education {
@@ -128,6 +170,7 @@ body {
     width: 100%;
     padding: 30px 0px 30px 30px;
 }
+
 
 .hobbies {
     width: 100%;
@@ -150,37 +193,82 @@ body {
     background-color: #FECD6A;
 }
 
+.hobbie {
+    width: 100%;
+    padding: 30px 0px 30px 30px;
+}
+
+h8 {
+    font-family: 'JetBrains Mono', monospace;
+    color: white;
+    font-size: 50px;
+ }
+
+.title {
+    width: 100%;
+    height: fit-content;
+    padding-bottom: 50px;
+}
+
+.profilepic {
+    border-radius: 25px;
+    height: 250px;
+    width: 250px;
+}
+
+.team {
+    width: 100%;
+    height: fit-content;
+    padding: 30px 0px 30px 0px;
+    margin-left: 7.5%;
+    margin-right: 7.5%;
+    padding-bottom: 300px;
+
+}
+
+.proimage {
+    height: 250px;
+    width: 250px;
+    border-radius: 25px;
+    margin-right: 5%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
 .container {
     position: relative;
-    width: 50%;
-  }
+    width: 250px;
+    height: 250px;
+    border-radius: 25px;
+    float:left;
+    margin-right: 5%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+ }
   
-  .image {
-    display: block;
-    width: 200px;
-    height: 200px;
-  }
-  
-  .overlay {
+.overlay {
     position: absolute;
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
-    height: 200px;
-    width: 200px;
+    height: 100%;
+    width: 100%;
     opacity: 0;
     transition: .5s ease;
-    background-color: #008CBA;
-  }
+    background-color: #FECD6A;
+    margin-top: 20px;
+    border-radius: 25px;
+}
   
-  .container:hover .overlay {
+.container:hover .overlay {
     opacity: 1;
-  }
+}
   
-  .text {
+.text {
+    font-family: 'JetBrains Mono', monospace;
     color: white;
-    font-size: 20px;
+    font-size: 50px;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -188,4 +276,9 @@ body {
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     text-align: center;
-  }
+}
+
+.teamtext {
+    padding-bottom: 50px;
+    width: 100%;
+}

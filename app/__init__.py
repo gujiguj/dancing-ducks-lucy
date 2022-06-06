@@ -309,7 +309,7 @@ fellows = {
         "hobbies": [
             {
                 "name": "Boardgames",
-                "image": "",
+                "image": "/static/img/boardgames.png",
                 "desc": "A pretty new habit for me. It's a great way to make new friends and have fun. Some of the boardgames that I play include Ticket to Ride, Rival Restaurant, Mahjong, Exploding Kittens."
             },
             {

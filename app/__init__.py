@@ -207,46 +207,65 @@ fellows = {
     },
     "rodrigo": {
         "first": "Rodrigo",
-        "last": "",
-        "github": "",
-        "linkedin": "",
+        "last": "Lara",
+        "github": "https://github.com/RodrigoLaraM",
+        "linkedin": "https://www.linkedin.com/in/rodrigolaram/",
         "resume": "",
-        "about": "",
-        "image": "",
+        "about": "Hi! I'm Rodrigo Lara. A rising senior at Michigan State University majoring in Data Science",
+        "image": "lara-mlh.jpg",
         "education": [
             {
-                "institution": "",
-                "grad_date": "",
-                "courses": ""
+                "institution": "Michigan State University",
+                "grad_date": "December 2023",
+                "courses": "Data Science"
             }
         ],
         "experience": [
             {
-                "position": "",
-                "company": "",
-                "dates": "",
-                "desc": "",
+                "position": "Teaching Assistant",
+                "company": "Michigan State University",
+                "dates": "January 2022 - May 2022",
+                "desc": "I taught an introductory Python programming and algorithmic thinking course to 35 students.",
             }
         ],
         "hobbies": [
             {
-                "name": "",
+                "name": "Reading",
                 "image": "",
-                "desc": ""
+                "desc": "I'm mainly interested finance, geopolitics and phylosophy"
             },
             {
-                "name": "",
+                "name": "Music Production",
                 "image": "",
-                "desc": "",
-            },
-            {
-                "name": "",
-                "image": "",
-                "desc": ""
+                "desc": "On free times I write electronic music",
             }
         ],
         "locations": [
-
+            {
+                "location": "Paris, FR",
+                "coordinates": [48.8566, 2.3522],
+                "desc": "Beuatiful Eiffel Tower"
+            },
+            {
+                "location": "Barcelona, SP",
+                "coordinates": [41.3874, 2.1686],
+                "desc": "Best 'Jamon Serrano' I've ever had"
+            },
+            {
+                "location": "Reynosa, MX",
+                "coordinates": [26.0508, -98.2979],
+                "desc": "The city I was raised in"
+            },
+            {
+                "location": "Chicago, IL",
+                "coordinates": [41.8781, -87.6298],
+                "desc": "I went once to see my favorite artist, Flume, at Lollapalooza"
+            },
+            {
+                "location": "Cancun. MX",
+                "coordinates": [21.1619, -86.8515],
+                "desc": "Some of the most beautiful beaches in Mexico."
+            }
         ]
     },
     "kelly": {

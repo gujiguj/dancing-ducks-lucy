@@ -1,44 +1,38 @@
 {% extends 'base.html' %}
 
 {% block body %}
+<div class="hobbies">
     <h6 style="margin-left:30px"> OUR HOBBIES </h6>
     
     {% set ns = namespace() %}
     {% set ns.dark = false %}
     {% for fellow in fellows %}
     {% if ns.dark %} 
-        <table class="hobbies" style="background-color:#5C75F4"> 
+        <div class="fellow" style="background-color:#5C75F4"> 
     {% else %}
-        <table class="hobbies" >
+        <div class="fellow">
     {% endif %}
-        <tr>
-            <th>{{ fellows[fellow]['first'] }}</th>
-        </tr>
-        <!--use namespace to change variable within loop; with jinja, assignments within loops do not outlive its scope-->
-        {% set ns.alternate = false %}
-        {% for hobby in fellows[fellow]['hobbies'] %}
-                <tr>
-                    {% if ns.alternate %}
-                        <td class="td-image">
-                            <img src="{{ hobby['image'] }}">
-                        </td>
-                        <td class="td-content" style="text-align:right;">
-                            <h8>{{ hobby['name'] }}</h8>
-                            <p>{{ hobby['desc'] }}</p>
-                        </td>
-                    {% else %}
-                        <td class="td-content" style="text-align:left">
-                            <h8>{{ hobby['name'] }}</h8>
-                            <p>{{ hobby['desc'] }}</p>
-                        </td>
-                        <td class="td-image">
-                            <img src="{{ hobby['image'] }}">
-                        </td>
-                    {% endif %}
-                </tr>
-            {% set ns.alternate = not ns.alternate %}
-        {% endfor %}
-    </table>
+            <h6><a href="/fellow/{{ fellow }}">{{ fellows[fellow]['first'] }}</a></h6>
+            <!--use namespace to change variable within loop; with jinja, assignments within loops do not outlive its scope-->
+            <div style="margin:30px 30px">
+            {% set ns.alternate = false %}
+            {% for hobby in fellows[fellow]['hobbies'] %}
+                        {% if ns.alternate %}
+                                <div class="hobby" style="text-align:right">
+                                    <img src="{{ hobby['image'] }}">
+                                    <span class="p"><h8>{{ hobby['name'] }}</h8><br>{{ hobby['desc'] }}</span>
+                                </div>
+                        {% else %}
+                                <div class="hobby">
+                                    <span class="p"><h8>{{ hobby['name'] }}</h8><br>{{ hobby['desc'] }}</span>
+                                    <img src="{{ hobby['image'] }}">
+                                </div>
+                        {% endif %}
+                {% set ns.alternate = not ns.alternate %}
+            {% endfor %}
+            </div>
+        </div>
     {% set ns.dark = not ns.dark %}
     {% endfor %}
+</div>
 {% endblock %}

@@ -51,6 +51,12 @@ p {
     color: white;
     font-size: 20px;
 }
+.p {
+    font-family: 'JetBrains Mono', monospace;
+    color: white;
+    font-size: 20px;
+    width:100%;
+}
 h7 {
     font-family: 'JetBrains Mono', monospace;
     color:#182EA4 ;
@@ -171,43 +177,35 @@ body {
     padding: 30px 0px 30px 30px;
 }
 
-
 .hobbies {
     width: 100%;
-    padding: 30px;
+}
+
+.hobbies .fellow {
+    padding:30px;
+}
+
+.fellow .hobby {
+    margin: 30px;
+    display: flex;
+    align-items:center;
+}
+
+.hobbies a {
+    color: #182EA4;  
+}
+.hobbies a:link {
+    text-decoration: none;
+}
+.hobbies a:hover {
+    color: white;
 }
 
 .hobbies img {
-    max-width:100%;
+    margin: 0px 30px;
+    max-width:20%;
     height:auto;
     border-radius: 50%;
-}
-
-.hobbies td {
-    padding-left:2%;
-    padding-right:2%;
-}
-
-.hobbies .td-image {
-    width:300px;
-}
-
-.hobbies .td-content {
-    width:auto;
-}
-
-.hobbies tr {
-    display:block;
-    padding:15px 0px;
-}
-
-.hobbies th {
-    font-family: 'Encode Sans', sans-serif;
-    color: #182EA4;
-    font-size: 50px;
-    text-align: left;
-    padding-right: 75px;
-    margin: 0px;
 }
 
 .box {

@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block body %}
+<div class="profile">
+    <div id="profile-picture" class="profile-picture">
+        <img src="/static/img/{{ fellow['image'] }}">
+    </div>
+    <h1>{{ title }}</h1>
+
+</div>
+<div>
+    <h1>About Me</h1>
+    <p>
+        {{ fellow["about"] }}
+    </p>
+
+    <h1>Education</h1>
+        {% for entry in fellow["education"] %}
+            <h2>{{ entry["institution"] }}</h2>
+            <p>{{ entry["grad_date"] }}</p>
+            <p>{{ entry["courses"] }}</p>
+        {% endfor %}
+    <h1>Experience</h1>
+        {% for entry in fellow["experience"] %}
+            <h2>{{ entry["position"] }}</h2>
+            <p>{{ entry["company"] }}</p>
+            <p>{{ entry["dates"] }}</p>
+            <p>{{ entry["desc"] }}</p>
+        {% endfor %}
+</div>
+{% endblock %}

@@ -2,6 +2,43 @@ import os
 from flask import Flask, render_template, request
 from dotenv import load_dotenv
 
+# dictionary of all information about fellows. Will be passed in a render_template call and used in a jinja template.
+# "name": {
+#         "first": "",
+#         "last": "",
+#         "about": "",
+#         "image": "",
+#         "socials": [
+#             {
+#                 "name": "",
+#                 "link": ""
+#             }
+#         ],
+#         "education": [
+#             {
+#                 "institution": "",
+#                 "grad_date": "",
+#                 "courses": "",
+#             }
+#         ],
+#         "experience": [
+#             {
+#                 "position": "",
+#                 "company": "",
+#                 "dates": "",
+#                 "desc": ""
+#             }
+#         ],
+#         "resume": "",
+#         "hobbies": [
+#             {
+#                 "name": "",
+#                 "image": "",
+#                 "desc": ""
+#             }
+            
+#         ]
+#     }
 fellows = {
     "lucy": {
         "first": "Lucy",
@@ -232,9 +269,10 @@ fellows = {
                 "position": "",
                 "company": "",
                 "dates": "",
-                "desc": "",
+                "desc": ""
             }
         ],
+        "resume": "",
         "hobbies": [
             {
                 "name": "",
@@ -261,7 +299,7 @@ fellows = {
 load_dotenv()
 app = Flask(__name__)
 
-
+# home page route
 @app.route('/')
 def index():
     return render_template('index.html', title="MLH Fellow", url=os.getenv("URL"))

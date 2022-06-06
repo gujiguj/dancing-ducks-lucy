@@ -38,20 +38,12 @@
 
     <div class="experience">
         <h6>Experience</h6>
-        <table>
             {% for entry in fellow['experience'] %}
-                <tr>
-                    <td style="vertical-align: top;"><img style="height:150px; width:150px" src="{{ entry['image'] }}"></td>
-                    <td>
-                        <h7>{{ entry['position'] }}</h7>
-                        <p>{{ entry['company'] }}</p>
-                        <p>{{ entry['dates'] }}</p>
-                        <p>{{ entry['desc'] }}</p>
-                        <!--<p style="float: left; margin-left: 50px; margin-top: 30px;"><img src="{{ fellow['image']}}" class="profilepic"> </p>-->
-                    </td>
-                </tr>
+                <h7>{{ entry['position'] }} - {{ entry['company'] }}</h7>
+                <p>{{ entry['dates'] }}</p>
+                <p>{{ entry['desc'] }}</p>
+                <!--<p style="float: left; margin-left: 50px; margin-top: 30px;"><img src="{{ fellow['image']}}" class="profilepic"> </p>-->
             {% endfor %}
-        </table>
     </div>
 </div>
 {% endblock %}

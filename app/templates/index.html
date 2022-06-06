@@ -24,7 +24,7 @@
         <div class="container">
             <img src="{{ fellows[fellow]['image'] }}" class="proimage">
             <div class="overlay">
-                <div class="text">{{ fellows[fellow]['first'] }}</div>
+                <div class="text"><a href="/fellow/{{ fellow }}">{{ fellows[fellow]['first'] }}</a></div>
             </div> 
         </div>
     {% endfor %}

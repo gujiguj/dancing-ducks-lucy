@@ -271,7 +271,7 @@ fellows = {
         "github": "https://github.com/Kelly0921",
         "linkedin": "https://www.linkedin.com/in/kellychen0921/",
         "resume": "",
-        "about": "Hey! I'm Kelly from Plano, TX. I’m known as the one who's always driven to learn new skills, and I'm always looking forward to challenges to help me grow beyond my limits. I enjoy researching the latest technology trends, exploring different software, and sharing these ideas with others. I'm also passionate about entreprenurship, and I'm currently working on my own project building a unique payment gateway service. During my free time, as a woman in STEM, I’m always active in multiple Women in STEM communities, I often participate in workshops and other conferences to advocate for girls in STEM and educate potential students on their path to STEM.",
+        "about": "Hey! I'm Kelly from Plano, TX. I'm known as the one who's always driven to learn new skills, and I'm always looking forward to challenges to help me grow beyond my limits. I enjoy researching the latest technology trends, exploring different software, and sharing these ideas with others. I'm also passionate about entreprenurship, and I'm currently working on my own project building a unique payment gateway service. During my free time, as a woman in STEM, I’m always active in multiple Women in STEM communities, I often participate in workshops and other conferences to advocate for girls in STEM and educate potential students on their path to STEM.",
         "image": "",
         "education": [
             {
@@ -341,7 +341,7 @@ fellows = {
             },
             {
                 "location": "Las Vegas, United States",
-                "coordinates": [36.1716, 115.1391°],
+                "coordinates": [36.1716, 115.1391],
                 "desc": "Went during winter break, and I had a lot of fun there visiting different hotels!"
             },
             {

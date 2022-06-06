@@ -20,29 +20,13 @@
     <div class="teamtext">
         <h3> THE TEAM </h3>
     </div>
-    <div class="container">
-        <img src="/static/img/lucy-mlh.jpeg" class="proimage">
-        <div class="overlay">
-            <div class="text">Lucy</div>
-        </div> 
-    </div>
-    <div class="container">
-        <img src="/static/img/mia-mlh.jpg" class="proimage">
-        <div class="overlay">
-            <div class="text">Mia</div>
-        </div>  
-    </div>
-    <div class="container">
-        <img src="/static/img/logo.jpg" class="proimage">
-        <div class="overlay">
-            <div class="text">Rodrigo</div>
-        </div>  
-    </div>
-    <div class="container">
-        <img src="/static/img/logo.jpg" class="proimage">
-        <div class="overlay">
-            <div class="text">Kelly</div>
-        </div>  
-    </div> 
+    {% for fellow in fellows %}
+        <div class="container">
+            <img src="{{ fellows[fellow]['image'] }}" class="proimage">
+            <div class="overlay">
+                <div class="text">{{ fellows[fellow]['first'] }}</div>
+            </div> 
+        </div>
+    {% endfor %}
 </div>
 {% endblock %}

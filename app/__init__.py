@@ -44,7 +44,7 @@ fellows = {
         "first": "Lucy",
         "last": "Wang",
         "about": "Hi, I'm Lucy Wang! I'm from Newark, DE, and I'm studying Computer Science and Japanese at Villanova University. I like learning things that pique my interest! I also like cats, snoozing, and drawing cute things.",
-        "image": "lucy-mlh.jpeg",
+        "image": "/static/img/lucy-mlh.jpeg",
         "socials": [
             {
                 "name": "LinkedIn",
@@ -64,6 +64,7 @@ fellows = {
                 "company": "Sepax Technologies, Inc.",
                 "dates": "July 2020 - August 2020, May 2022 - present",
                 "desc": "Maintained network of office computers, printers, and cameras, company intranet, and company's external marketing website. Used HTML/CSS, PHP, and MySQL to update and add features to the intranet and external website. Carried out general help desk tasks (e.g. setting up new desktops, assigning emails, troubleshooting network issues, and monitoring network security).",
+                "image": "/static/img/sepax.png"
             }
         ],
         "resume": "",
@@ -119,7 +120,7 @@ fellows = {
         "linkedin": "https://www.linkedin.com/in/yanbmia/",
         "resume": "",
         "about": "Hey, I'm Mia! I'm originally from Brooklyn, New York. I currently an undergrad student studying Computer Science. I'm a creative person. I love anything design and art-related. I've always been an indecisive person, but one thing I always knew I wanted to do is to travel the world.",
-        "image": "mia-mlh.jpg",
+        "image": "/static/img/mia-mlh.jpg",
         "education": [
             {
                 "institution": "Binghamton University",
@@ -212,7 +213,7 @@ fellows = {
         "linkedin": "https://www.linkedin.com/in/rodrigolaram/",
         "resume": "",
         "about": "Hi! I'm Rodrigo Lara. A rising senior at Michigan State University majoring in Data Science",
-        "image": "lara-mlh.jpg",
+        "image": "/static/img/lara-mlh.jpg",
         "education": [
             {
                 "institution": "Michigan State University",
@@ -320,7 +321,7 @@ app = Flask(__name__)
 # home page route
 @app.route('/')
 def index():
-    return render_template('index.html', title="MLH Fellow", url=os.getenv("URL"))
+    return render_template('index.html', title="MLH Fellow", url=os.getenv("URL"), fellows=fellows)
 
 # fellow's pages route
 # input the dictionary of a fellow's information using fellows[name]
@@ -330,8 +331,8 @@ def show_profile(name):
 
 @app.route('/hobbies')
 def show_hobby():
-    return render_template('hobbies.html', title="Travel", fellows=fellows)
+    return render_template('hobbies.html', title="Travel", fellows=fellows, url=os.getenv("URL"))
 
 @app.route('/map')
 def show_map():
-    return render_template('map.html', title="Travel", fellows=fellows)
+    return render_template('map.html', title="Travel", fellows=fellows, url=os.getenv("URL"))

@@ -174,7 +174,40 @@ body {
 
 .hobbies {
     width: 100%;
-    padding: 30px 0px 30px 30px;
+    padding: 30px;
+}
+
+.hobbies img {
+    max-width:100%;
+    height:auto;
+    border-radius: 50%;
+}
+
+.hobbies td {
+    padding-left:2%;
+    padding-right:2%;
+}
+
+.hobbies .td-image {
+    width:300px;
+}
+
+.hobbies .td-content {
+    width:auto;
+}
+
+.hobbies tr {
+    display:block;
+    padding:15px 0px;
+}
+
+.hobbies th {
+    font-family: 'Encode Sans', sans-serif;
+    color: #182EA4;
+    font-size: 50px;
+    text-align: left;
+    padding-right: 75px;
+    margin: 0px;
 }
 
 .box {
@@ -193,15 +226,10 @@ body {
     background-color: #FECD6A;
 }
 
-.hobbie {
-    width: 100%;
-    padding: 30px 0px 30px 30px;
-}
-
 h8 {
     font-family: 'JetBrains Mono', monospace;
     color: white;
-    font-size: 50px;
+    font-size: 42px;
  }
 
 .title {

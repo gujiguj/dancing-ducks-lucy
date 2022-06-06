@@ -1,37 +1,44 @@
 {% extends 'base.html' %}
 
 {% block body %}
-<div class="hobbies">
-    <h6> OUR HOBBIES </h6>
+    <h6 style="margin-left:30px"> OUR HOBBIES </h6>
     
+    {% set ns = namespace() %}
+    {% set ns.dark = false %}
     {% for fellow in fellows %}
-        <h1>{{ fellows[fellow]['first'] }}</h1>
+    {% if ns.dark %} 
+        <table class="hobbies" style="background-color:#5C75F4"> 
+    {% else %}
+        <table class="hobbies" >
+    {% endif %}
+        <tr>
+            <th>{{ fellows[fellow]['first'] }}</th>
+        </tr>
         <!--use namespace to change variable within loop; with jinja, assignments within loops do not outlive its scope-->
-        {% set ns = namespace(alternate = false) %}
+        {% set ns.alternate = false %}
         {% for hobby in fellows[fellow]['hobbies'] %}
-            <table>
                 <tr>
                     {% if ns.alternate %}
-                        <td>
+                        <td class="td-image">
                             <img src="{{ hobby['image'] }}">
                         </td>
-                        <td>
-                            <h2>{{ hobby['name'] }}</h2>
-                            {{ hobby['desc'] }}
+                        <td class="td-content" style="text-align:right;">
+                            <h8>{{ hobby['name'] }}</h8>
+                            <p>{{ hobby['desc'] }}</p>
                         </td>
                     {% else %}
-                        <td>
-                            <h2>{{ hobby['name'] }}</h2>
-                            {{ hobby['desc'] }}
+                        <td class="td-content" style="text-align:left">
+                            <h8>{{ hobby['name'] }}</h8>
+                            <p>{{ hobby['desc'] }}</p>
                         </td>
-                        <td>
+                        <td class="td-image">
                             <img src="{{ hobby['image'] }}">
                         </td>
                     {% endif %}
                 </tr>
-            </table>
             {% set ns.alternate = not ns.alternate %}
         {% endfor %}
+    </table>
+    {% set ns.dark = not ns.dark %}
     {% endfor %}
-</div>
 {% endblock %}

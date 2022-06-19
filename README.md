@@ -1,4 +1,5 @@
 # Welcome to the Dancing Ducks' Portfolio Site!
+The site can be accessed at dancingduckslucy.duckdns.org:5000.
 
 ## Quickstart
 Clone the `main` branch of the repository into your own local repository. 

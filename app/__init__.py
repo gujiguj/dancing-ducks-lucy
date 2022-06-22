@@ -1,6 +1,9 @@
 import os
 from flask import Flask, render_template, request
 from dotenv import load_dotenv
+from peewee import *
+import datetime
+from playhouse.shortcuts import model_to_dict
 
 # dictionary of all information about fellows. Will be passed in a render_template call and used in a jinja template.
 # "name": {
@@ -361,6 +364,29 @@ fellows = {
 load_dotenv()
 app = Flask(__name__)
 
+mydb = MySQLDatabase(os.getenv("MYSQL_DATABASE"),
+    user=os.getenv("MYSQL_USER"),
+    password=os.getenv("MYSQL_PASSWORD"),
+    host=os.getenv("MYSQL_HOST"),
+    port=3306
+)
+
+# creates a class to define a table for Peewee
+class TimelinePost(Model):
+    name = CharField()
+    email = CharField()
+    content = TextField()
+    # date
+    created_at = DateTimeField(default=datetime.datetime.now)
+
+    class Meta:
+        database = mydb
+
+mydb.connect()
+mydb.create_tables([TimelinePost])
+
+print(mydb)
+
 # home page route
 @app.route('/')
 def index():
@@ -379,3 +405,37 @@ def show_hobby():
 @app.route('/map')
 def show_map():
     return render_template('map.html', title="Travel", fellows=fellows, url=os.getenv("URL"))
+
+# adds a timeline post to the db via POST method
+# the date in the instance is just the current date/time
+@app.route('/api/timeline_post', methods=['POST'])
+def post_timeline_post():
+    name = request.form['name']
+    email = request.form['email']
+    content = request.form['content']
+
+    # calls TimelinePost class to create a new instance
+    timeline_post = TimelinePost.create(name=name, email=email, content=content)
+
+    return model_to_dict(timeline_post)
+
+# retrives all timeline posts, ordered by created_at (creation time) descending
+# returns a dictionary
+@app.route('/api/timeline_post', methods=['GET'])
+def get_timeline_post():
+    return {
+        'timeline_posts': [
+            model_to_dict(p)
+            # iterates through all records returned by the select statement
+            # these records should contain everything and be ordered by creation date descending
+            for p in TimelinePost.select().order_by(TimelinePost.created_at.desc())
+        ]
+    }
+
+@app.route('/api/timeline_post/<int:id>', methods=['DELETE'])
+def delete_timeline_post(id):
+    post_to_delete = TimelinePost.get(TimelinePost.id == id)
+    deleted_post = model_to_dict(post_to_delete)
+    post_to_delete.delete_instance()
+
+    return deleted_post

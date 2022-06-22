@@ -439,3 +439,7 @@ def delete_timeline_post(id):
     post_to_delete.delete_instance()
 
     return deleted_post
+
+@app.route('/timeline')
+def timeline():
+    return render_template('timeline.html', title='Timeline', timeline=get_timeline_post())

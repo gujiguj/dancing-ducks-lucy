@@ -3,7 +3,7 @@
 {% block body %}
 
 <div class="form">
-    <form id="timeline_form">
+    <form id="timeline_form" onsubmit="postFormData(event)">
         <label for="name">Name</label>
         <input type="text" name="name" id="name">
         <label for="email">Email</label>
@@ -26,13 +26,23 @@
 
 
 <script>
-    document.getElementById('timeline_form').addEventListener('submit', e => {
-        e.preventDefault(); // prevents redirect
-        const formData = new FormData(e.target)
-        fetch('/api/timeline_post', {
-            method: 'POST',
-            body: formData
-        });
-    });
+    async function postFormData(e) {
+        e.preventDefault();
+
+        const form = document.getElementById('timeline_form');
+        const formData = new FormData(form);
+
+        try {
+            await fetch('/api/timeline_post', {
+                method: 'POST',
+                body: formData
+            })
+
+        } catch (err) {
+            console.log('An error occured');
+        } finally {
+            location.reload()
+        }
+    }
 </script>
 {% endblock %}

@@ -1,8 +1,9 @@
 {% extends "base.html" %}
 
 {% block body %}
+
 <div class="form">
-    <form action="/api/timeline_post" method="POST">
+    <form id="timeline_form">
         <label for="name">Name</label>
         <input type="text" name="name" id="name">
         <label for="email">Email</label>
@@ -22,4 +23,16 @@
         <br>
     {% endfor %}
 </div>
+
+
+<script>
+    document.getElementById('timeline_form').addEventListener('submit', e => {
+        e.preventDefault(); // prevents redirect
+        const formData = new FormData(e.target)
+        fetch('/api/timeline_post', {
+            method: 'POST',
+            body: formData
+        });
+    });
+</script>
 {% endblock %}

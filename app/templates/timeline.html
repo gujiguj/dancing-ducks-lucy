@@ -3,13 +3,14 @@
 {% block body %}
 
 <div class="form">
-    <form id="timeline_form" onsubmit="postFormData(event)">
+    <form id="timeline_form" >
+        <!-- onsubmit="postFormData(event)" -->
         <label for="name">Name</label>
-        <input type="text" name="name" id="name">
+        <input type="text" name="name" id="name" autocomplete="off">
         <label for="email">Email</label>
-        <input type="text" name="email" id="email">
+        <input type="text" name="email" id="email" autocomplete="off">
         <br>
-        <input type="text" name="content" id="content">
+        <input type="text" name="content" id="content" autocomplete="off">
         <br>
         <input type="submit" value="Post">
     </form>
@@ -26,12 +27,16 @@
 
 
 <script>
+    // must be asynchronous for fetch to work.
     async function postFormData(e) {
+        // prevents going to the API return page
         e.preventDefault();
 
+        // get form data
         const form = document.getElementById('timeline_form');
         const formData = new FormData(form);
 
+        // try POST request
         try {
             await fetch('/api/timeline_post', {
                 method: 'POST',
@@ -41,8 +46,20 @@
         } catch (err) {
             console.log('An error occured');
         } finally {
+            // reload
             location.reload()
         }
     }
+
+    // document.getElementById('timeline_form').addEventListener('submit', async (e) => {
+    //     e.preventDefault();
+    //     const formData= new FormData(e.target)
+    //     await fetch('/api/timeline_post', {
+    //         method: 'POST',
+    //         body: formData
+    //     });
+    //     location.reload()
+    // });
+
 </script>
 {% endblock %}

@@ -3,25 +3,31 @@
 {% block body %}
 
 <div class="form">
+    <p>Make a Post</p>
     <form id="timeline_form" onsubmit="postFormData(event)">
-        
-        <label for="name">Name</label>
-        <input type="text" name="name" id="name">
-        <label for="email">Email</label>
-        <input type="text" name="email" id="email">
-        <br>
-        <input type="text" name="content" id="content">
-        <br>
+        <input type="text" name="name" id="name" placeholder="Name">
+        <br><br>
+        <input type="text" name="email" id="email" placeholder="Email">
+        <br><br>
+        <textarea type="text" name="content" id="content" placeholder="Post something on my timeline!"></textarea>
+        <br><br>
         <input type="submit" value="Post">
     </form>
 </div>
+
+
 <div class="timeline">
-    {% for post in timeline['timeline_posts'] %}
-        <p>{{ post['created_at'] }}</p>
-        <p>{{ post['name'] }}</p>
-        <p>{{ post['email'] }}</p>
-        <p>{{ post['content'] }}</p>
+    <br>
+    <p style="text-align:left">Posts</p>
+{% for post in timeline['timeline_posts'] %}
+    {% if post['name'] != '' %}
+    <div class="timeline_post">
+        <p style="text-align:left">{{ post['created_at'] }}</p>
+        <p style="text-align:left">{{ post['name'] }} ({{ post['email'] }}):</p>
         <br>
+        <p>{{ post['content'] }}</p>
+    </div>
+    {% endif %}
     {% endfor %}
 </div>
 

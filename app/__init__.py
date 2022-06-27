@@ -400,7 +400,7 @@ def show_profile(name):
 
 @app.route('/hobbies')
 def show_hobby():
-    return render_template('hobbies.html', title="Travel", fellows=fellows, url=os.getenv("URL"))
+    return render_template('hobbies.html', title="Hobbies", fellows=fellows, url=os.getenv("URL"))
 
 @app.route('/map')
 def show_map():

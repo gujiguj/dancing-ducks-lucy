@@ -67,6 +67,11 @@ class AppTestCase(unittest.TestCase):
         assert "<input type=\"text\" name=\"name\"" in html
         assert "<input type=\"text\" name=\"email\"" in html
         assert "<textarea type=\"text\" name=\"content\"" in html
+        # Check that previously created posts are rendered to timeline page.
+        assert "Bob Wheeler" in html
+        assert "bob@example.com" in html
+        assert "Pedro Alvarez" in html
+        assert "pedro@example.com" in html
 
 
     def test_malformed_timeline_post(self):

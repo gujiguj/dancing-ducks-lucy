@@ -4,6 +4,7 @@ from dotenv import load_dotenv
 from peewee import *
 import datetime
 from playhouse.shortcuts import model_to_dict
+import re
 
 # dictionary of all information about fellows. Will be passed in a render_template call and used in a jinja template.
 # "name": {
@@ -364,12 +365,17 @@ fellows = {
 load_dotenv()
 app = Flask(__name__)
 
-mydb = MySQLDatabase(os.getenv("MYSQL_DATABASE"),
-    user=os.getenv("MYSQL_USER"),
-    password=os.getenv("MYSQL_PASSWORD"),
-    host=os.getenv("MYSQL_HOST"),
-    port=3306
-)
+# Implemented TESTING mode that allows for interacting with an in-memory test database
+if os.getenv("TESTING") == "true":
+    print("Running in test mode")
+    mydb = SqliteDatabase('file:memory?mode=memory&cache=shared', uri = True)
+else:
+    mydb = MySQLDatabase(os.getenv("MYSQL_DATABASE"),
+        user=os.getenv("MYSQL_USER"),
+        password=os.getenv("MYSQL_PASSWORD"),
+        host=os.getenv("MYSQL_HOST"),
+        port=3306
+    )
 
 # creates a class to define a table for Peewee
 class TimelinePost(Model):
@@ -410,9 +416,28 @@ def show_map():
 # the date in the instance is just the current date/time
 @app.route('/api/timeline_post', methods=['POST'])
 def post_timeline_post():
-    name = request.form['name']
-    email = request.form['email']
-    content = request.form['content']
+    # Added try-except blocks for catching improper inputs attempting to be used in a post, such as missing or improper values.
+    try:
+        name = request.form['name']
+    except:
+        return "Invalid name (missing)", 400
+    if name == "":
+        return "Invalid name (improper value)", 400
+    try:
+        email = request.form['email']
+    except:
+        return "Invalid email (missing)", 400
+
+    if not re.fullmatch("^([A-Za-z\d\.\-_]+)@([A-Za-z\d\-_]+)\.([a-z]{2,8})(\.[a-z]{2,8})?$", email):
+        return "Invalid email (improper value)", 400
+
+    try:
+        content = request.form['content']
+    except:
+        return "Invalid content (missing)", 400
+
+    if request.form.get('content', "") == "":
+        return "Invalid content (empty)", 400
 
     # calls TimelinePost class to create a new instance
     timeline_post = TimelinePost.create(name=name, email=email, content=content)

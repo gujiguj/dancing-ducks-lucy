@@ -13,9 +13,10 @@ class AppTestCase(unittest.TestCase):
         assert response.status_code == 200
         html = response.get_data(as_text=True)
         assert "<title>MLH Fellow</title>" in html
-        # Added more tests relating to the home page
+        # Check that the response's content is html and not empty.
         assert response.content_type == "text/html; charset=utf-8"
         assert response.content_length > 0
+        # Check that needed links are present in the home page
         assert "<a href=\"/timeline\">" in html
         assert "<a href=\"/map\">" in html
 
@@ -27,25 +28,28 @@ class AppTestCase(unittest.TestCase):
         json = response.get_json()
         assert "timeline_posts" in json
         assert len(json["timeline_posts"]) == 0
-        # Added more tests relating to the /api/timeline_post GET and POST apis
+        # Created a new test post and checked status code, type of response, and part of the information.
         response2 = self.client.post(
             "/api/timeline_post", data={"name": "Bob Wheeler", "email": "bob@example.com", "content": "Hello world! I\'m Bob!"})
         assert response2.status_code == 200
         assert response2.is_json
         json2 = response2.get_json()
         assert json2.get("name") == "Bob Wheeler"
+        # Requested for all current posts to ensure that a new post has been added.
         response = self.client.get("/api/timeline_post")
         assert response.status_code == 200
         assert response.is_json
         json = response.get_json()
         assert "timeline_posts" in json
         assert len(json["timeline_posts"]) == 1
+        # Created a new test post and checked status code, type of response, and part of the information.
         response3 = self.client.post(
             "/api/timeline_post", data={"name": "Pedro Alvarez", "email": "pedro@example.com", "content": "Hello world! I\'m Pedro!"})
         assert response3.status_code == 200
         assert response3.is_json
         json3 = response3.get_json()
         assert json3.get("name") == "Pedro Alvarez"
+        # Requested for all current posts to ensure that a new post has been added.
         response = self.client.get("/api/timeline_post")
         assert response.status_code == 200
         assert response.is_json
@@ -53,12 +57,13 @@ class AppTestCase(unittest.TestCase):
         assert "timeline_posts" in json
         assert len(json["timeline_posts"]) == 2
 
-        # Added more tests relating to the timeline page
+        # Check that the response's content is html and not empty.
         timelineResponse = self.client.get("/timeline")
         assert timelineResponse.status_code == 200
         assert timelineResponse.content_type == "text/html; charset=utf-8"
         assert timelineResponse.content_length > 0
         html = timelineResponse.get_data(as_text=True)
+        # Check that needed input fields are present in the timeline page
         assert "<input type=\"text\" name=\"name\"" in html
         assert "<input type=\"text\" name=\"email\"" in html
         assert "<textarea type=\"text\" name=\"content\"" in html

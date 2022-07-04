@@ -365,6 +365,7 @@ fellows = {
 load_dotenv()
 app = Flask(__name__)
 
+# Implemented TESTING mode that allows for interacting with an in-memory test database
 if os.getenv("TESTING") == "true":
     print("Running in test mode")
     mydb = SqliteDatabase('file:memory?mode=memory&cache=shared', uri = True)
@@ -415,6 +416,7 @@ def show_map():
 # the date in the instance is just the current date/time
 @app.route('/api/timeline_post', methods=['POST'])
 def post_timeline_post():
+    # Added try-except blocks for catching improper inputs attempting to be used in a post, such as missing or improper values.
     try:
         name = request.form['name']
     except:

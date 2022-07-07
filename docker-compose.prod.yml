@@ -1,0 +1,24 @@
+version: "3" # docker compose file version
+services:
+  myportfolio:
+    container_name: myportfolio
+    build: . # built from Dockerfile at current dir
+    restart: always 
+    env_file:
+      - .env
+    ports: # publish port 5000 to the host
+      - "5000:5000"
+    depends_on: # this service should start after mysql service
+      - mysql
+
+  mysql:
+    container_name: mysql
+    image: mariadb # lower resource usage replacement of mysql
+    restart: always
+    env_file:
+      - .env
+    volumes: # map volume to a directory
+      - mydatabase:/var/lib/mysql
+
+volumes:
+  mydatabase:

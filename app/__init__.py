@@ -392,6 +392,7 @@ mydb.connect()
 mydb.create_tables([TimelinePost])
 
 print(mydb)
+mydb.close()
 
 # home page route
 @app.route('/')
@@ -440,7 +441,9 @@ def post_timeline_post():
         return "Invalid content (empty)", 400
 
     # calls TimelinePost class to create a new instance
+    mydb.connect()
     timeline_post = TimelinePost.create(name=name, email=email, content=content)
+    mydb.close()
 
     return model_to_dict(timeline_post)
 
@@ -448,20 +451,25 @@ def post_timeline_post():
 # returns a dictionary
 @app.route('/api/timeline_post', methods=['GET'])
 def get_timeline_post():
+    mydb.connect()
+    posts = TimelinePost.select().order_by(TimelinePost.created_at.desc())
+    mydb.close()
     return {
         'timeline_posts': [
             model_to_dict(p)
             # iterates through all records returned by the select statement
             # these records should contain everything and be ordered by creation date descending
-            for p in TimelinePost.select().order_by(TimelinePost.created_at.desc())
+            for p in posts
         ]
     }
 
 @app.route('/api/timeline_post/<int:id>', methods=['DELETE'])
 def delete_timeline_post(id):
+    mydb.connect()
     post_to_delete = TimelinePost.get(TimelinePost.id == id)
     deleted_post = model_to_dict(post_to_delete)
     post_to_delete.delete_instance()
+    mydb.close()
 
     return deleted_post
 

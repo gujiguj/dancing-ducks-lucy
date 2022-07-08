@@ -6,8 +6,6 @@ services:
     restart: always 
     env_file:
       - .env
-    ports: # publish port 5000 to the host
-      - "5000:5000"
     depends_on: # this service should start after mysql service
       - mysql
 
@@ -20,5 +18,21 @@ services:
     volumes: # map volume to a directory
       - mydatabase:/var/lib/mysql
 
+  nginx: # nginx service
+    container_name: nginx
+    image: jonasal/nginx-certbot # dockerhub image
+    restart: always
+    environment: 
+      - CERTBOT_EMAIL=lwang5@villanova.edu # environment variable for letsencrypt ssl cert
+    ports:
+      - 80:80 # port binding
+      - 443:443
+    volumes:
+      - nginx_secrets:/etc/letsencrypt # store cert files in host /etc/letsencrypt
+      - ./user_conf.d:/etc/nginx/user_conf.d # map nginx config files from host into container
+    depends_on:
+      - myportfolio
+
 volumes:
   mydatabase:
+  nginx_secrets:

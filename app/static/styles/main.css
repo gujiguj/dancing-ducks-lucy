@@ -342,3 +342,13 @@ h8 {
 .form textarea {
     height:100px;
 }
+
+.form .error {
+    font-size: 12px;
+    color: #cc1616;
+    margin:0%;
+}
+
+.form #request_limit {
+    text-align: center;
+}

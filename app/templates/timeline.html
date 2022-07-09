@@ -4,15 +4,23 @@
 
 <div class="form">
     <p>Make a Post</p>
-    <form id="timeline_form" onsubmit="postFormData(event)">
-        <input type="text" name="name" id="name" placeholder="Name">
+    <!-- onsubmit="postFormData(event)"-->
+    <form id="timeline_form">
+        <label for="name">Name</label>
+        <input type="text" name="name" id="name">
+        <p id="name_error" class="error" hidden>Please write your name</p>
         <br><br>
-        <input type="text" name="email" id="email" placeholder="Email">
+        <label for="email">Email</label>
+        <input type="text" name="email" id="email">
+        <p id="email_error" class="error" hidden>Invalid email</p>
         <br><br>
+        <label for="content">Post Content</label>
         <textarea type="text" name="content" id="content" placeholder="Post something on my timeline!"></textarea>
+        <p id="content_error" class="error" hidden>Please write some text</p>
         <br><br>
         <input type="submit" value="Post">
     </form>
+    <p id="request_limit" hidden>Too many requests.<br>Please wait a minute and refresh to try again.</p>
 </div>
 
 
@@ -34,39 +42,57 @@
 
 <script>
     // must be asynchronous for fetch to work.
-    async function postFormData(e) {
-        // prevents going to the API return page
+    // async function postFormData(e) {
+    //     // prevents going to the API return page
+    //     e.preventDefault();
+
+    //     // get form data
+    //     const form = document.getElementById('timeline_form');
+    //     const formData = new FormData(form);
+
+    //     // try POST request
+    //     try {
+    //         await fetch('/api/timeline_post', {
+    //             method: 'POST',
+    //             body: formData
+    //         })
+    //     } catch (err) {
+    //         console.log('An error occured');
+    //     } finally {
+    //         // reload
+    //         form.reset()
+    //         // location.reload()
+    //     }
+    // }
+
+    document.getElementById('timeline_form').addEventListener('submit', async (e) => {
         e.preventDefault();
-
-        // get form data
-        const form = document.getElementById('timeline_form');
-        const formData = new FormData(form);
-
-        // try POST request
-        try {
+        let nameEmpty = document.getElementById("name").value == "";
+        let emailEmpty = document.getElementById("email").value == "";
+        let emailValid = /^([A-Za-z\d\.\-_]+)@([A-Za-z\d\-_]+)\.([a-z]{2,8})(\.[a-z]{2,8})?$/.test(document.getElementById("email").value);
+        let contentEmpty = document.getElementById("content").value == "";
+        document.getElementById("name_error").hidden = nameEmpty ? false : true;
+        document.getElementById("email_error").hidden = emailEmpty || !emailValid ? false : true;
+        document.getElementById("content_error").hidden = contentEmpty ? false : true;
+        if (!(nameEmpty || emailEmpty || contentEmpty || !emailValid)) {
+            const form = e.target;
+            const formData= new FormData(form)
             await fetch('/api/timeline_post', {
                 method: 'POST',
                 body: formData
             })
-
-        } catch (err) {
-            console.log('An error occured');
-        } finally {
-            // reload
-            form.reset()
-            location.reload()
+            .then(response => response.status)
+            .then(status => {
+                if (status == 429) {
+                    form.hidden = true;
+                    document.getElementById("request_limit").hidden = false;
+                } else {
+                    form.reset();
+                    location.reload();
+                }
+            });
         }
-    }
-
-    // document.getElementById('timeline_form').addEventListener('submit', async (e) => {
-    //     e.preventDefault();
-    //     const formData= new FormData(e.target)
-    //     await fetch('/api/timeline_post', {
-    //         method: 'POST',
-    //         body: formData
-    //     });
-    //     location.reload()
-    // });
+    });
 
 </script>
 {% endblock %}

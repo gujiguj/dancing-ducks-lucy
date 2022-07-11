@@ -330,8 +330,9 @@ load_dotenv()
 app = Flask(__name__)
 
 # Implemented TESTING mode that allows for interacting with an in-memory test database
-testing = os.getenv("TESTING")
-if testing == "true":
+
+testing = True if os.getenv("TESTING") == "true" else False
+if testing:
     print("Running in test mode")
     mydb = SqliteDatabase('file:memory?mode=memory&cache=shared', uri = True)
 else:
@@ -341,7 +342,7 @@ else:
         host=os.getenv("MYSQL_HOST"),
         port=3306
     )
-    mydb.close()
+    # if not testing: mydb.close()
 
 # creates a class to define a table for Peewee
 class TimelinePost(Model):
@@ -356,9 +357,9 @@ class TimelinePost(Model):
 
 mydb.connect()
 mydb.create_tables([TimelinePost])
-if not testing: mydb.close() 
 
 print(mydb)
+if not testing: mydb.close() 
 
 # home page route
 @app.route('/')
@@ -416,11 +417,11 @@ def post_timeline_post():
 # returns a dictionary
 @app.route('/api/timeline_post', methods=['GET'])
 def get_timeline_post():
-    posts = TimelinePost.select().order_by(TimelinePost.created_at.desc())
+    posts = [ model_to_dict(p) for p in TimelinePost.select().order_by(TimelinePost.created_at.desc()) ]
     # timeline_posts = [ model_to_dict(p) for p in posts ]
     if not testing: mydb.close()
     return {
-        'timeline_posts': [ model_to_dict(p) for p in posts ]
+        'timeline_posts': posts
     }
 
 @app.route('/api/timeline_post/<int:id>', methods=['DELETE'])
@@ -434,5 +435,4 @@ def delete_timeline_post(id):
 
 @app.route('/timeline')
 def timeline():
-    mydb.close()
     return render_template('timeline.html', title='Timeline', timeline=get_timeline_post())

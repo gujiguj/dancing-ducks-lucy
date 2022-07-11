@@ -1,8 +1,5 @@
 #!/bin/bash
 
-# kill all tmux sessions
-# tmux kill-server
-
 # enter repository
 cd dancing-ducks-lucy
 

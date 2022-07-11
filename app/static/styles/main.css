@@ -97,8 +97,8 @@ body {
     background-color: #7689F1;
     font-family: "Roboto", serif;
     font-weight: 700 !important;
-    padding-top: 0px;
     border-bottom: medium solid #7689F1;
+    margin-left:2%;
 }
 
 .nav-content .logo-touch-target {
@@ -266,9 +266,7 @@ h8 {
     height: 250px;
     border-radius: 25px;
     float:left;
-    margin-right: 5%;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin: auto;
  }
   
 .overlay {

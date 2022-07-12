@@ -12,7 +12,7 @@ class AppTestCase(unittest.TestCase):
         response = self.client.get("/")
         assert response.status_code == 200
         html = response.get_data(as_text=True)
-        assert "<title>MLH Fellow</title>" in html
+        assert "<title>Lucy Wang</title>" in html
         # Check that the response's content is html and not empty.
         assert response.content_type == "text/html; charset=utf-8"
         assert response.content_length > 0

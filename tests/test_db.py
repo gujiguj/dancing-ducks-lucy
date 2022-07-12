@@ -1,6 +1,7 @@
 import unittest
 from peewee import *
-
+import os
+os.environ['TESTING'] = 'true'
 from app import TimelinePost
 
 MODELS = [TimelinePost]

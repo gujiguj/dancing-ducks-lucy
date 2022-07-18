@@ -13,7 +13,7 @@ h1 {
 
 h2 {
     font-size: 36px;
-    margin: 2vh;
+    margin: 3vh;
 }
 
 h3 {
@@ -50,6 +50,7 @@ p {
 
 .nav-button.selected {
     background-color: #5E6472;
+    color:white;
 }
 
 .intro {
@@ -87,6 +88,7 @@ p {
 .experience {
     width: 50vw;
     background-color: #F4D6B6;
+    border-radius: 15px;
 }
 
 .experience p {

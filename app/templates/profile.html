@@ -5,44 +5,31 @@
     <div id="intro" class="intro">
         <h1>Hi! I'm Lucy.</h1>
     </div>
+
     <div id="about" class="about">
         <img src="{{ fellow['image']}}">
         <h2>Nice to meet you.</h2>
         <p>{{ fellow['about'] }}</p>
     </div>
-    <!-- <div class="about">
-        <table style="margin-left: 50px;">
-        <tr>
-        <td><img src="{{ fellow['image']}}" class="profilepic"> </td>
-        <br><br><br>
-        <td>
-        <div class="moreabout">
-            <h6> Meet {{ title }} </h6>
-            <p>{{ fellow['about'] }}</p>
-                <a href="{{ fellow['github'] }}" class="box"><h7> github</h7></a>
-                <a href="{{ fellow['linkedin'] }}" class="box"><h7> linkedin</h7></a>
-                <a href="{{ fellow['linkedin'] }}" class="box"><h7> resume</h7></a>
-        </div>
-    </td>
-    </tr>
-    </table>
-    </div> -->
 
-    <div class="education">
+    <!-- <div class="education">
         <h6>Education</h6>
         {% for entry in fellow['education'] %}
             <h7>{{ entry['institution'] }} - {{ entry['grad_date'] }}</h7>
             <p>{{ entry['courses'] }}</p>
         {% endfor %}
-    </div>
+    </div> -->
 
-    <div class="experience">
-        <h6>Experience</h6>
+    <div id="experiences" class="experiences">
+        <h2>Work Experience</h2>
             {% for entry in fellow['experience'] %}
-                <h7>{{ entry['position'] }} - {{ entry['company'] }}</h7>
-                <p>{{ entry['dates'] }}</p>
-                <p style="margin-right:50px">{{ entry['desc'] }}</p>
-                <!--<p style="float: left; margin-left: 50px; margin-top: 30px;"><img src="{{ fellow['image']}}" class="profilepic"> </p>-->
+                <div class="experience">
+                    <div style="margin: 20px">
+                        <h3>{{ entry['position'] }} - {{ entry['company'] }}</h3>
+                        <p>{{ entry['dates'] }}</p>
+                        <p>{{ entry['desc'] }}</p>
+                    </div>
+                </div>
             {% endfor %}
     </div>
 </div>

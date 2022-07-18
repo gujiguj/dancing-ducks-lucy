@@ -68,6 +68,14 @@ var NavBar = function (_React$Component) {
                     classNames: this.state.selected == "about" ? "nav-button selected" : "nav-button"
                 }),
                 React.createElement(NavButton, {
+                    link: "#experiences",
+                    value: "Experience",
+                    onClick: function onClick() {
+                        return _this2.handleClick("experience");
+                    },
+                    classNames: this.state.selected == "experience" ? "nav-button selected" : "nav-button"
+                }),
+                React.createElement(NavButton, {
                     link: "#hobbies",
                     value: "Hobbies",
                     onClick: function onClick() {

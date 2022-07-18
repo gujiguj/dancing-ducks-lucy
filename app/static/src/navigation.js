@@ -41,6 +41,12 @@ class NavBar extends React.Component {
                     onClick={() => this.handleClick("about")}
                     classNames={this.state.selected == "about" ? "nav-button selected" : "nav-button"}
                 />
+                <NavButton 
+                    link="#experiences"
+                    value="Experience"
+                    onClick={() => this.handleClick("experience")}
+                    classNames={this.state.selected == "experience" ? "nav-button selected" : "nav-button"}
+                />
                 <NavButton
                     link="#hobbies"
                     value="Hobbies"

@@ -19,8 +19,11 @@
         <link href="https://fonts.googleapis.com/css2?family=Encode+Sans:wght@900&family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,500&display=swap" rel="stylesheet">
     
 
-    <link lang='sass' rel="stylesheet" href="/static/styles/main.css">
+    <link lang='sass' rel="stylesheet" href="/static/styles/styles.css">
     <link rel='icon' href='/static/img/favicon.ico' type='image/x-icon' />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kantumruy+Pro&display=swap" rel="stylesheet">
     <title>{{ title }}</title>
     
     {% block head %}
@@ -30,16 +33,22 @@
 <body>
     <header class="nav-bar">
             <nav>
-                <button type="logo"><a href="https://fellowship.mlh.io/programs/production-engineering"><img src="/static/img/logo.svg" /></a></button>
                 <button type="button"><a href="/"><h5>Home</h5></a></button>
                 <button type="button"><a href="/hobbies"><h5>Hobbies</h5></a></button>
                 <button type="button"><a href="/map"><h5>Travel</h5></a></button>
                 <button type="button"><a href="/timeline"><h5>Timeline</h5></a></button>
             </nav>
-            
         </div>
     </header>
+    <div id="like_button_container"></div>
     {% block body %}
     {% endblock %}
+    <!-- Load React. -->
+    <!-- Note: when deploying, replace "development.js" with "production.min.js". -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>  
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <!-- Load our React component. -->
+    <script src="/static/like_button.js"></script>
+    <!-- Need to install Nodejs and babel to work with JSX. -->
 </body>
 </html>

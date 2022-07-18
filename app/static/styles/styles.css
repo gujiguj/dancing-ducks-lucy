@@ -1,0 +1,20 @@
+body {
+    background-color: #FAF3DD;
+    font-family: 'Kantumruy Pro', sans-serif;
+}
+
+.nav-bar {
+    /* position:fixed; */
+    display:flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.nav-bar button {
+    border-radius: 30px;
+    border-style: none;
+}
+
+a {
+    text-decoration: none;
+}

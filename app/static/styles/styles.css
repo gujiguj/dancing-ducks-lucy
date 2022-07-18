@@ -1,6 +1,7 @@
 body {
     background-color: #FAF3DD;
     font-family: 'Kantumruy Pro', sans-serif;
+    font-size: 16px;
 }
 
 .nav-bar {
@@ -10,10 +11,29 @@ body {
     justify-content: flex-start;
 }
 
-.nav-bar button {
+.nav-button {
+    font-family: 'Kantumruy Pro', sans-serif;
+    font-size: 16px;
     border-radius: 30px;
     border-style: none;
+    background-color:transparent;
+    margin: 1vw 1vw;
+    width: 7vw;
+    height: 8vh;
 }
+
+.nav-button:hover {
+    background-color: #AED9E0;
+}
+
+.nav-button.selected {
+    background-color: #5E6472;
+}
+
+/* .nav-bar button {
+    border-radius: 30px;
+    border-style: none;
+} */
 
 a {
     text-decoration: none;

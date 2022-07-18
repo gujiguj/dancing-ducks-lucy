@@ -4,6 +4,7 @@ The site can be accessed [here](https://dancingduckslucy.duckdns.org).
 ## Quickstart
 Clone the `main` branch of the repository into your own local repository. 
 
+### Getting the Python Flask backend up
 _Make sure you have python3 and pip installed!_
 
 Create and activate virtual environment using `virtualenv`.
@@ -15,7 +16,24 @@ Use the package manager [pip](https://pip.pypa.io/en/stable/) to install all dep
 ```bash
 $ pip install -r requirements.txt
 ```
-Run the Flask server:
+
+### Adding React using JSX
+> If you don't intend on touching React, this is not required, as the plain JS files are already in the repository. [Skip](#getting-the-app-up)
+
+_Make sure you have Node js and npm installed, and that package.json exists_
+
+Install the Babel JSX preprocessor:
+```bash
+$ npm install --save-dev @babel/cli @babel/core babel-preset-react-app
+```
+
+Run Babel:
+```bash
+$ npx babel --watch app/static/src --out-dir app/static --presets react-app/prod
+```
+
+### Getting the app up:
+Finally, run the Flask server:
 ```bash
 $ flask run
 ```

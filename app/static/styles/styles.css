@@ -1,11 +1,31 @@
 body {
     background-color: #FAF3DD;
     font-family: 'Kantumruy Pro', sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1 {
+    font-size: 48px;
+}
+
+h2 {
+    font-size: 36px;
+    margin: 0vh;
+}
+
+h3 {
+    font-size: 24px;
+}
+
+p {
     font-size: 16px;
 }
 
 .nav-bar {
-    /* position:fixed; */
+    position:fixed; 
     display:flex;
     flex-direction: row;
     justify-content: flex-start;
@@ -19,7 +39,7 @@ body {
     background-color:transparent;
     margin: 1vw 1vw;
     width: 7vw;
-    height: 8vh;
+    height: 6vh;
 }
 
 .nav-button:hover {
@@ -30,11 +50,27 @@ body {
     background-color: #5E6472;
 }
 
-/* .nav-bar button {
-    border-radius: 30px;
-    border-style: none;
-} */
+.intro {
+    display: flex;
+    width: auto;
+    height: 90vh;
+    justify-content: center;
+    align-items: center;
+}
 
-a {
-    text-decoration: none;
+.about {
+    display: flex;
+    flex-direction: column;
+    height: 90vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.about img {
+    border-radius: 50%;
+    margin: 2vh;
+}
+
+.about p {
+    width: 30vw;
 }

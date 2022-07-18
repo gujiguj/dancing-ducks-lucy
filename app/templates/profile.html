@@ -1,16 +1,16 @@
 {% extends "base.html" %}
 
 {% block body %}
-<!-- <div class="profile">
-    <div id="profile-picture" class="profile-picture">
-        <img src="/static/img/{{ fellow['image']}}">
-    </div>
-</div> -->
 <div>
-    <!-- <p> Meet {{ title }}
-        {{ fellow['about'] }}
-    </p> -->
-    <div class="about">
+    <div id="intro" class="intro">
+        <h1>Hi! I'm Lucy.</h1>
+    </div>
+    <div id="about" class="about">
+        <img src="{{ fellow['image']}}">
+        <h2>Nice to meet you.</h2>
+        <p>{{ fellow['about'] }}</p>
+    </div>
+    <!-- <div class="about">
         <table style="margin-left: 50px;">
         <tr>
         <td><img src="{{ fellow['image']}}" class="profilepic"> </td>
@@ -26,7 +26,7 @@
     </td>
     </tr>
     </table>
-    </div>
+    </div> -->
 
     <div class="education">
         <h6>Education</h6>

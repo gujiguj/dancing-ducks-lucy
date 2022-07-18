@@ -9,6 +9,7 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 function NavButton(props) {
+    console.log(props.classNames);
     return React.createElement(
         "a",
         { href: props.link },
@@ -29,15 +30,17 @@ var NavBar = function (_React$Component) {
         var _this = _possibleConstructorReturn(this, (NavBar.__proto__ || Object.getPrototypeOf(NavBar)).call(this, props));
 
         _this.state = {
-            selected: 0
+            selected: "intro"
         };
         return _this;
     }
 
     _createClass(NavBar, [{
         key: "handleClick",
-        value: function handleClick(i) {
-            this.state.selected = i;
+        value: function handleClick(page) {
+            this.setState({
+                selected: page
+            });
             console.log(this.state.selected);
         }
     }, {
@@ -49,31 +52,39 @@ var NavBar = function (_React$Component) {
                 "div",
                 { className: "nav-bar" },
                 React.createElement(NavButton, {
-                    link: "/",
+                    link: "#intro",
                     value: "Home",
                     onClick: function onClick() {
-                        return _this2.handleClick(0);
+                        return _this2.handleClick("intro");
                     },
-                    classNames: this.state.selected === 0 ? "nav-button selected" : "nav-button"
+                    classNames: this.state.selected == "intro" ? "nav-button selected" : "nav-button"
                 }),
                 React.createElement(NavButton, {
-                    link: "/hobbies",
+                    link: "#about",
+                    value: "About",
+                    onClick: function onClick() {
+                        return _this2.handleClick("about");
+                    },
+                    classNames: this.state.selected == "about" ? "nav-button selected" : "nav-button"
+                }),
+                React.createElement(NavButton, {
+                    link: "#hobbies",
                     value: "Hobbies",
                     onClick: function onClick() {
-                        return _this2.handleClick(1);
+                        return _this2.handleClick("hobbies");
                     },
-                    classNames: this.state.selected === 1 ? "nav-button selected" : "nav-button"
+                    classNames: this.state.selected == "hobbies" ? "nav-button selected" : "nav-button"
                 }),
                 React.createElement(NavButton, {
-                    link: "/map",
+                    link: "#map",
                     value: "Map",
                     onClick: function onClick() {
-                        return _this2.handleClick(2);
+                        return _this2.handleClick("map");
                     },
-                    classNames: this.state.selected === 2 ? "nav-button selected" : "nav-button"
+                    classNames: this.state.selected == "map" ? "nav-button selected" : "nav-button"
                 }),
                 React.createElement(NavButton, {
-                    link: "/timeline",
+                    link: "#timeline",
                     value: "Timeline",
                     onClick: function onClick() {
                         return _this2.handleClick(3);

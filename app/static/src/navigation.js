@@ -1,6 +1,7 @@
 'use strict';
 
 function NavButton(props) {
+    console.log(props.classNames)
     return (
         <a href={props.link}>
             <button className={props.classNames} onClick={props.onClick}>
@@ -14,12 +15,14 @@ class NavBar extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            selected: 0,
+            selected: "intro",
         }
     }
 
-    handleClick(i) {
-        this.state.selected = i;
+    handleClick(page) {
+        this.setState({
+            selected: page,
+        });
         console.log(this.state.selected);
     }
 
@@ -27,25 +30,31 @@ class NavBar extends React.Component {
         return (
             <div className="nav-bar">
                 <NavButton 
-                    link="/"
+                    link="#intro"
                     value="Home"
-                    onClick={() => this.handleClick(0)}
-                    classNames={this.state.selected === 0 ? "nav-button selected" : "nav-button"}
+                    onClick={() => this.handleClick("intro")}
+                    classNames={this.state.selected == "intro" ? "nav-button selected" : "nav-button"}
                 />
                 <NavButton
-                    link="/hobbies"
+                    link="#about"
+                    value="About"
+                    onClick={() => this.handleClick("about")}
+                    classNames={this.state.selected == "about" ? "nav-button selected" : "nav-button"}
+                />
+                <NavButton
+                    link="#hobbies"
                     value="Hobbies"
-                    onClick={() => this.handleClick(1)}
-                    classNames={this.state.selected === 1 ? "nav-button selected" : "nav-button"}
+                    onClick={() => this.handleClick("hobbies")}
+                    classNames={this.state.selected == "hobbies" ? "nav-button selected" : "nav-button"}
                 />
                 <NavButton
-                    link="/map"
+                    link="#map"
                     value="Map"
-                    onClick={() => this.handleClick(2)}
-                    classNames={this.state.selected === 2 ? "nav-button selected" : "nav-button"}
+                    onClick={() => this.handleClick("map")}
+                    classNames={this.state.selected == "map" ? "nav-button selected" : "nav-button"}
                 />
                 <NavButton
-                    link="/timeline"
+                    link="#timeline"
                     value="Timeline"
                     onClick={() => this.handleClick(3)}
                     classNames={this.state.selected === 3 ? "nav-button selected" : "nav-button"}

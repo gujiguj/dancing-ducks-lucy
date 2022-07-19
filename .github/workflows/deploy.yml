@@ -4,6 +4,9 @@ on:
     branches:
       - main
   workflow_dispatch:
+  pull_request:
+    branches:
+      - main
 jobs:
   test: # this line is the job id, can't contain spaces
     runs-on: ubuntu-latest
@@ -29,6 +32,7 @@ jobs:
         run: ./run_test.sh # the script activates the virtualenv so we don't have to run that here.
   deploy:
     name: "Deploy to VPS"
+    if: ${{ github.event_name != 'pull_request'}}
     needs: test
     runs-on: ubuntu-latest
     steps:

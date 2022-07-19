@@ -20,7 +20,8 @@ fellows = {
             {
                 "institution": "Villanova University",
                 "grad_date": "May 2023",
-                "courses": "Computer Science"
+                "major": "B.S. Computer Science",
+                "courses": "Algorithms & Data Structures, Analysis of Algorithms, Discrete Structures, Theory of Computation, Organization of Programming Languages, Linear Algebra for Computing, Computer Systems, Principles of Database Systems, Platform-based Computing, Software Engineering, Computer Ethics, Computer Graphics"
             }
         ],
         "experience": [

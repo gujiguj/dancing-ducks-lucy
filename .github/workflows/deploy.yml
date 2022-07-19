@@ -5,8 +5,31 @@ on:
       - main
   workflow_dispatch:
 jobs:
+  test: # this line is the job id, can't contain spaces
+    runs-on: ubuntu-latest
+    name: Run Tests # this is the job name, which is displayed in GitHub UI
+    env:
+      TESTING: true
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.6.8'
+
+      - name: Setup Python Virtual Environment
+        run: python -m venv python3-virtualenv
+      
+      - name: Install Dependencies
+        run: python3-virtualenv/bin/pip install -r requirements.txt
+
+      - name: Run Tests
+        run: ./run_test.sh # the script activates the virtualenv so we don't have to run that here.
   deploy:
     name: "Deploy to VPS"
+    needs: test
     runs-on: ubuntu-latest
     steps:
       - name: Configure ssh
@@ -35,6 +58,19 @@ jobs:
       
       - name: Print Container Status
         run: ssh my-vps 'cd ${{ secrets.PROJECT_ROOT }} && docker compose ps'
-
-      - name: Notify via Discord
+  notify_failure:
+    name: Failure Notification
+    if: ${{ failure() }}
+    needs: [test, deploy]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Discord notification
+        run: curl -s POST "${{ secrets.DISCORD_WEBHOOK }}" -d "content=💥 Deployment Failed! @here"
+  notify_success:
+    name: Success Notification
+    if: ${{ success() }}
+    needs: [test, deploy]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Discord notification
         run: curl -s POST "${{ secrets.DISCORD_WEBHOOK }}" -d "content=🚀 Deployment Successful @here"

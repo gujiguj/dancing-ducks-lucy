@@ -6,6 +6,7 @@ python3-virtualenv
 flask.sqlite
 .DS_Store
 .vscode
+.babelrc
 
 # Node .gitignore
 # Logs

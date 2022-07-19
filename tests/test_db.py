@@ -33,11 +33,11 @@ class TestTimelinePost(unittest.TestCase):
         # Create 2 timeline posts
         first_post = TimelinePost.create(
             name='John Doe', email='john@example.com', content='Hello world! I\'m John!')
-        assert first_post.id == 1
+        self.assertEqual(first_post.id, 1)
         second_post = TimelinePost.create(
             name='Jane Doe', email='jane@example.com', content='Hello world! I\'m Jane!')
-        assert second_post.id == 2
+        self.assertEqual(second_post.id, 2)
 
         # Tested getting timeline posts and asserting that they are correct.
 
-        assert TimelinePost.select() == [first_post, second_post]
+        self.assertEqual(TimelinePost.select(), [first_post, second_post])

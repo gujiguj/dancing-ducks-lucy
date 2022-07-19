@@ -337,6 +337,10 @@ h8 {
     width:100%;
 }
 
+#submit_btn:hover {
+    background-color: #182EA4;
+}
+
 .form textarea {
     height:100px;
 }

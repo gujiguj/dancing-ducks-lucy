@@ -32,7 +32,7 @@ jobs:
         run: ./run_test.sh # the script activates the virtualenv so we don't have to run that here.
   deploy:
     name: "Deploy to VPS"
-    if: ${{ github.event_name != 'pull_request'}}
+    if: ${{ github.event_name != 'pull_request' }}
     needs: test
     runs-on: ubuntu-latest
     steps:
@@ -62,19 +62,27 @@ jobs:
       
       - name: Print Container Status
         run: ssh my-vps 'cd ${{ secrets.PROJECT_ROOT }} && docker compose ps'
+  notify_pr_success:
+    name: PR Ready Notification
+    if: ${{ github.event_name == 'pull_request' && success() }}
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Discord notification
+        run: curl -s POST "${{ secrets.DISCORD_WEBHOOK }}" -d "content=@here\n☑️ A PR is Ready to be Merged here https://github.com/gujiguj/dancing-ducks-lucy/pull/${{ github.event.number }}"
   notify_failure:
-    name: Failure Notification
+    name: Deployment Failure Notification
     if: ${{ failure() }}
     needs: [test, deploy]
     runs-on: ubuntu-latest
     steps:
       - name: Discord notification
-        run: curl -s POST "${{ secrets.DISCORD_WEBHOOK }}" -d "content=💥 Deployment Failed! @here"
+        run: curl -s POST "${{ secrets.DISCORD_WEBHOOK }}" -d "content=@here\n💥 Deployment Failed!"
   notify_success:
-    name: Success Notification
+    name: Deployment Success Notification
     if: ${{ success() }}
     needs: [test, deploy]
     runs-on: ubuntu-latest
     steps:
       - name: Discord notification
-        run: curl -s POST "${{ secrets.DISCORD_WEBHOOK }}" -d "content=🚀 Deployment Successful @here"
+        run: curl -s POST "${{ secrets.DISCORD_WEBHOOK }}" -d "content=@here\n🚀 Deployment Successful @here"

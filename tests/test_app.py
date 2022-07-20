@@ -10,88 +10,94 @@ class AppTestCase(unittest.TestCase):
 
     def test_home(self):
         response = self.client.get("/")
-        assert response.status_code == 200
+        self.assertEqual(response.status_code, 200)
         html = response.get_data(as_text=True)
-        assert "<title>Lucy Wang</title>" in html
+        self.assertIn("<title>Lucy Wang</title>", html)
         # Check that the response's content is html and not empty.
-        assert response.content_type == "text/html; charset=utf-8"
-        assert response.content_length > 0
+        self.assertEqual(response.content_type, "text/html; charset=utf-8")
+        self.assertGreater(response.content_length, 0)
         # Check that needed links are present in the home page
-        assert "<a href=\"/timeline\">" in html
-        assert "<a href=\"/map\">" in html
+        self.assertIn("<a href=\"/timeline\">", html)
+        self.assertIn("<a href=\"/map\">", html)
 
 
     def test_timeline(self):
         response = self.client.get("/api/timeline_post")
-        assert response.status_code == 200
-        assert response.is_json
+        self.assertEqual(response.status_code, 200)
+        self.assertTrue(response.is_json)
         json = response.get_json()
-        assert "timeline_posts" in json
-        assert len(json["timeline_posts"]) == 0
+        self.assertIn("timeline_posts", json)
+        self.assertEqual(len(json["timeline_posts"]), 0)
+
         # Created a new test post and checked status code, type of response, and part of the information.
         response2 = self.client.post(
             "/api/timeline_post", data={"name": "Bob Wheeler", "email": "bob@example.com", "content": "Hello world! I\'m Bob!"})
-        assert response2.status_code == 200
-        assert response2.is_json
+        self.assertEqual(response2.status_code, 200)
+        self.assertTrue(response2.is_json)
         json2 = response2.get_json()
-        assert json2.get("name") == "Bob Wheeler"
+        self.assertEqual(json2.get("name"), "Bob Wheeler")
+
         # Requested for all current posts to ensure that a new post has been added.
         response = self.client.get("/api/timeline_post")
-        assert response.status_code == 200
-        assert response.is_json
+        self.assertEqual(response.status_code, 200)
+        self.assertTrue(response.is_json)
         json = response.get_json()
-        assert "timeline_posts" in json
-        assert len(json["timeline_posts"]) == 1
+        self.assertIn("timeline_posts", json)
+        self.assertEqual(len(json["timeline_posts"]), 1)
+
         # Created a new test post and checked status code, type of response, and part of the information.
         response3 = self.client.post(
             "/api/timeline_post", data={"name": "Pedro Alvarez", "email": "pedro@example.com", "content": "Hello world! I\'m Pedro!"})
-        assert response3.status_code == 200
-        assert response3.is_json
+        self.assertEqual(response3.status_code, 200)
+        self.assertTrue(response3.is_json)
         json3 = response3.get_json()
-        assert json3.get("name") == "Pedro Alvarez"
+        self.assertEqual(json3.get("name"), "Pedro Alvarez")
+
         # Requested for all current posts to ensure that a new post has been added.
         response = self.client.get("/api/timeline_post")
-        assert response.status_code == 200
-        assert response.is_json
+        self.assertEqual(response.status_code, 200)
+        self.assertTrue(response.is_json)
         json = response.get_json()
-        assert "timeline_posts" in json
-        assert len(json["timeline_posts"]) == 2
+        self.assertIn("timeline_posts", json)
+        self.assertEqual(len(json["timeline_posts"]), 2)
 
         # Check that the response's content is html and not empty.
         timelineResponse = self.client.get("/timeline")
-        assert timelineResponse.status_code == 200
-        assert timelineResponse.content_type == "text/html; charset=utf-8"
-        assert timelineResponse.content_length > 0
+        self.assertEqual(timelineResponse.status_code, 200)
+        self.assertEqual(timelineResponse.content_type, "text/html; charset=utf-8")
+        self.assertGreater(timelineResponse.content_length, 0)
         html = timelineResponse.get_data(as_text=True)
+
         # Check that needed input fields are present in the timeline page
-        assert "<input type=\"text\" name=\"name\"" in html
-        assert "<input type=\"text\" name=\"email\"" in html
-        assert "<textarea type=\"text\" name=\"content\"" in html
+        self.assertIn("<input type=\"text\" name=\"name\"", html)
+        self.assertIn("<input type=\"text\" name=\"email\"", html)
+        self.assertIn("<textarea type=\"text\" name=\"content\"", html)
+
         # Check that previously created posts are rendered to timeline page.
-        assert "Bob Wheeler" in html
-        assert "bob@example.com" in html
-        assert "Pedro Alvarez" in html
-        assert "pedro@example.com" in html
+        self.assertIn("Bob Wheeler", html)
+        self.assertIn("bob@example.com", html)
+        self.assertIn("Pedro Alvarez", html)
+        self.assertIn("pedro@example.com", html)
 
 
     def test_malformed_timeline_post(self):
         # POST request missing name
         response = self.client.post(
             "/api/timeline_post", data={"email": "john@example.com", "content": "Hello world, I'm John!"})
-        assert response.status_code == 400
+        self.assertEqual(response.status_code, 400)
         response_text = response.get_data(as_text=True)
-        assert "Invalid name" in response_text
+        self.assertIn("Invalid name", response_text)
 
         # POST request with empty content
         response = self.client.post(
             "/api/timeline_post", data={"name": "John Doe", "email": "john@example.com", "content": ""})
-        assert response.status_code == 400
+        self.assertEqual(response.status_code, 400)
         response_text = response.get_data(as_text=True)
-        assert "Invalid content" in response_text
+        self.assertIn("Invalid content", response_text)
 
         # POST request with malformed email
         response = self.client.post("/api/timeline_post", data={
                                     "name": "John Doe", "email": "not-an-email", "content": "Hello world, I'm John!"})
-        assert response.status_code == 400
+        self.assertEqual(response.status_code, 400)
         response_text = response.get_data(as_text=True)
-        assert "Invalid email" in response_text
+        self.assertIn("Invalid email", response_text)

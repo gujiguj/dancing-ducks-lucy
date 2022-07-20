@@ -1,6 +1,7 @@
 body {
     background-color: #FAF3DD;
     font-family: 'Kantumruy Pro', sans-serif;
+    color:black;
 }
 
 a {
@@ -9,6 +10,7 @@ a {
 
 h1 {
     font-size: 48px;
+    margin: 3vh;
 }
 
 h2 {
@@ -22,7 +24,7 @@ h3 {
 }
 
 p {
-    font-size: 16px;
+    font-size: 18px;
     margin: 0vh;
 }
 
@@ -36,12 +38,17 @@ p {
 .nav-button {
     font-family: 'Kantumruy Pro', sans-serif;
     font-size: 16px;
+    color:black;
     border-radius: 30px;
     border-style: none;
     background-color:transparent;
-    margin: 1vw 1vw;
+    transition: background-color 0.5s;
     width: 7vw;
     height: 6vh;
+    margin: 1vw 1vw;
+    display:flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .nav-button:hover {
@@ -57,8 +64,25 @@ p {
     display: flex;
     width: auto;
     height: 100vh;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.intro.links {
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.intro img {
+    width: 40px;
+    margin: 0vw 6px;
+    fill: #5E6472;
+}
+
+.intro img:hover {
+    fill: #AED9E0;
 }
 
 .about {

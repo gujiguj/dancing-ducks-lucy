@@ -14,6 +14,7 @@ fellows = {
         "github": "https://github.com/gujiguj",
         "linkedin": "https://www.linkedin.com/in/lucy-wang-a73267191/",
         "resume": "",
+        "email": "lwang5@villanova.edu",
         "about": "Hi, I'm Lucy Wang! I'm from Newark, DE, and I'm studying Computer Science and Japanese at Villanova University. I like learning things that pique my interest! I also like cats, snoozing, and drawing cute things.",
         "image": "/static/img/lucy-mlh.jpeg",
         "education": [

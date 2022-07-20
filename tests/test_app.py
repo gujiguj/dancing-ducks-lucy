@@ -17,8 +17,7 @@ class AppTestCase(unittest.TestCase):
         self.assertEqual(response.content_type, "text/html; charset=utf-8")
         self.assertGreater(response.content_length, 0)
         # Check that needed links are present in the home page
-        self.assertIn("<a href=\"/timeline\">", html)
-        self.assertIn("<a href=\"/map\">", html)
+        self.assertIn('<div id="navbar_container">', html)
 
 
     def test_timeline(self):

@@ -3,10 +3,8 @@
 function NavButton(props) {
     console.log(props.classNames)
     return (
-        <a href={props.link}>
-            <button className={props.classNames} onClick={props.onClick}>
+        <a href={props.link} className={props.classNames} onClick={props.onClick}>
             {props.value}
-            </button>
         </a>
     );
   }
@@ -54,13 +52,13 @@ class NavBar extends React.Component {
                     classNames={this.state.selected == "hobbies" ? "nav-button selected" : "nav-button"}
                 />
                 <NavButton
-                    link="#map"
+                    link="/map"
                     value="Map"
                     onClick={() => this.handleClick("map")}
                     classNames={this.state.selected == "map" ? "nav-button selected" : "nav-button"}
                 />
                 <NavButton
-                    link="#timeline"
+                    link="/timeline"
                     value="Timeline"
                     onClick={() => this.handleClick(3)}
                     classNames={this.state.selected === 3 ? "nav-button selected" : "nav-button"}

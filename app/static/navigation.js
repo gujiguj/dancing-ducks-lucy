@@ -12,12 +12,8 @@ function NavButton(props) {
     console.log(props.classNames);
     return React.createElement(
         "a",
-        { href: props.link },
-        React.createElement(
-            "button",
-            { className: props.classNames, onClick: props.onClick },
-            props.value
-        )
+        { href: props.link, className: props.classNames, onClick: props.onClick },
+        props.value
     );
 }
 
@@ -84,7 +80,7 @@ var NavBar = function (_React$Component) {
                     classNames: this.state.selected == "hobbies" ? "nav-button selected" : "nav-button"
                 }),
                 React.createElement(NavButton, {
-                    link: "#map",
+                    link: "/map",
                     value: "Map",
                     onClick: function onClick() {
                         return _this2.handleClick("map");
@@ -92,7 +88,7 @@ var NavBar = function (_React$Component) {
                     classNames: this.state.selected == "map" ? "nav-button selected" : "nav-button"
                 }),
                 React.createElement(NavButton, {
-                    link: "#timeline",
+                    link: "/timeline",
                     value: "Timeline",
                     onClick: function onClick() {
                         return _this2.handleClick(3);

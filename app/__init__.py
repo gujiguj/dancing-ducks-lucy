@@ -34,6 +34,23 @@ fellows = {
                 "image": "/static/img/sepax.png"
             }
         ],
+        "projects": [
+            {
+                "name": "Somnia",
+                "desc": "A college simulator game integrating a rhythm game and a visual novel made with Godot.",
+                "technologies": "", 
+            },
+            {
+                "name": "Portfolio",
+                "desc": "The site you're looking at!",
+                "technologies": "",
+            },
+            {
+                "name": "Three Turtles",
+                "desc": "A 3D web animation made with Three JS.",
+                "technologies": "",
+            },
+        ],
         "hobbies": [
             {
                 "name": "Art",

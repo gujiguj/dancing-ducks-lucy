@@ -1,3 +1,7 @@
+html {
+    scroll-behavior: smooth;
+  }
+
 body {
     background-color: #FAF3DD;
     font-family: 'Kantumruy Pro', sans-serif;
@@ -10,17 +14,16 @@ a {
 
 h1 {
     font-size: 48px;
-    margin: 3vh;
+    margin-bottom: 3vh;
 }
 
 h2 {
     font-size: 36px;
-    margin: 3vh;
 }
 
 h3 {
     font-size: 24px;
-    margin: 2vh;
+    margin-bottom: 2vh;
 }
 
 p {
@@ -60,7 +63,7 @@ p {
     color:white;
 }
 
-.intro {
+.flex-container {
     display: flex;
     width: auto;
     height: 100vh;
@@ -69,52 +72,57 @@ p {
     align-items: center;
 }
 
-.intro.links {
+#intro .links {
     display:flex;
     flex-direction: row;
     justify-content: center;
 }
 
-.intro img {
+#intro img {
     width: 40px;
-    margin: 0vw 6px;
+    margin: 0px 8px;
     fill: #5E6472;
 }
 
-.intro img:hover {
+#intro img:hover {
     fill: #AED9E0;
 }
 
-.about {
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-    justify-content: center;
-    align-items: center;
-}
-
-.about img {
+#about img {
     border-radius: 50%;
 }
 
-.about p {
+#about p {
     width: 30vw;
-}
-
-.experiences {
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-    justify-content: center;
-    align-items: center;
 }
 
 .experience {
     width: 50vw;
     background-color: #F4D6B6;
     border-radius: 15px;
+    transition: transform 0.5s;
 }
 
-.experience p {
-    margin: 2vh;
+.experience:hover {
+    transform: scale(1.05);
+}
+
+#projects .links {
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.project {
+    height: 20vw;
+    width: 20vw;
+    text-align: center;
+    background-color: #F4D6B6;
+    margin: 0vw 2vw;
+    border-radius: 15px;
+    transition: transform 0.5s;
+}
+
+.project:hover {
+    transform: scale(1.05);
 }

@@ -2,17 +2,17 @@
 
 {% block body %}
 <div>
-    <div id="intro" class="intro">
+    <div id="intro" class="flex-container">
         <h1>Hi! I'm Lucy.</h1>
         <div class="links">
-            <a href=""><img src="/static/img/resume.svg"></a>
             <a href="{{ fellow['github'] }}"><img src="/static/img/githubmark.png"></a>
             <a href="{{ fellow['linkedin'] }}"><img src="/static/img/linkedin.svg"></a>
+            <a href=""><img src="/static/img/resume.svg"></a>
             <a href="mailto:{{ fellow['email'] }}"><img src="/static/img/email.svg"></a>
         </div>
     </div>
 
-    <div id="about" class="about">
+    <div id="about" class="flex-container">
         <img src="{{ fellow['image']}}">
         <h2>Nice to meet you.</h2>
         <p>{{ fellow['about'] }}</p>
@@ -27,17 +27,31 @@
         {% endfor %}
     </div> -->
 
-    <div id="experiences" class="experiences">
+    <div id="experiences" class="flex-container">
         <h2>Work Experience</h2>
-            {% for entry in fellow['experience'] %}
-                <div class="experience">
-                    <div style="margin: 20px">
-                        <h3>{{ entry['position'] }} - {{ entry['company'] }}</h3>
-                        <p>{{ entry['dates'] }}</p>
-                        <p>{{ entry['desc'] }}</p>
-                    </div>
+        {% for entry in fellow['experience'] %}
+            <div class="experience">
+                <div style="margin: 30px">
+                    <h3>{{ entry['position'] }} - {{ entry['company'] }}</h3>
+                    <p>{{ entry['dates'] }}</p>
+                    <p>{{ entry['desc'] }}</p>
                 </div>
-            {% endfor %}
+            </div>
+        {% endfor %}
+    </div>
+
+    <div id="projects" class="flex-container">
+        <h2 style="text-align:center">Projects</h2>
+        <div class="links">
+        {% for project in fellow['projects'] %}
+            <div class="project">
+                <div style="margin: 30px;">
+                    <h3>{{ project['name'] }}</h3>
+                    <p>{{ project['desc'] }}</p>
+                </div>
+            </div>
+        {% endfor %}
+        </div>
     </div>
 </div>
 {% endblock %}

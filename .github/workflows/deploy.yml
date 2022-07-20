@@ -1,0 +1,88 @@
+name: Production Workflow
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+  pull_request:
+    branches:
+      - main
+jobs:
+  test: # this line is the job id, can't contain spaces
+    runs-on: ubuntu-latest
+    name: Run Tests # this is the job name, which is displayed in GitHub UI
+    env:
+      TESTING: true
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.6.8'
+
+      - name: Setup Python Virtual Environment
+        run: python -m venv python3-virtualenv
+      
+      - name: Install Dependencies
+        run: python3-virtualenv/bin/pip install -r requirements.txt
+
+      - name: Run Tests
+        run: ./run_test.sh # the script activates the virtualenv so we don't have to run that here.
+  deploy:
+    name: "Deploy to VPS"
+    if: ${{ github.event_name != 'pull_request' }}
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Configure ssh
+      # create a file that contains the private key
+      # +rw permissions
+      # create ssh config file with host directive named my-vm
+      # plus all ssh options underneath
+        run: |
+          mkdir -p ~/.ssh/
+          echo "$SSH_PRIVATE_KEY" > ~/.ssh/deploy-key.pem
+          chmod 600 ~/.ssh/deploy-key.pem
+          cat >> ~/.ssh/config <<END
+          Host my-vps
+            HostName $SSH_IP
+            User $SSH_USER
+            IdentityFile ~/.ssh/deploy-key.pem
+            StrictHostKeyChecking no
+          END
+        env:
+          SSH_USER: ${{ secrets.SSH_USER }}
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+          SSH_IP: ${{ secrets.SSH_IP }}
+
+      - name: Deploy Site
+        run: ssh my-vps '~/redeploy-site.sh'
+      
+      - name: Print Container Status
+        run: ssh my-vps 'cd ${{ secrets.PROJECT_ROOT }} && docker compose ps'
+  notify_pr_success:
+    name: PR Ready Notification
+    if: ${{ github.event_name == 'pull_request' && success() }}
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Discord notification
+        run: curl -s POST "${{ secrets.DISCORD_WEBHOOK }}" -d $'content=@here\n☑️ A PR is Ready to be Merged here https://github.com/gujiguj/dancing-ducks-lucy/pull/${{ github.event.number }}'
+  notify_failure:
+    name: Deployment Failure Notification
+    if: ${{ failure() }}
+    needs: [test, deploy]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Discord notification
+        run: curl -s POST "${{ secrets.DISCORD_WEBHOOK }}" -d $'content=@here\n💥 Deployment Failed!'
+  notify_success:
+    name: Deployment Success Notification
+    if: ${{ success() }}
+    needs: [test, deploy]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Discord notification
+        run: curl -s POST "${{ secrets.DISCORD_WEBHOOK }}" -d $'content=@here\n🚀 Deployment Successful'

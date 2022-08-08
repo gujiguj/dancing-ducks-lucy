@@ -22,8 +22,8 @@ services:
     container_name: nginx
     image: jonasal/nginx-certbot # dockerhub image
     restart: always
-    environment: 
-      - CERTBOT_EMAIL=lwang5@villanova.edu # environment variable for letsencrypt ssl cert
+    env_file:
+      - .env # contains email for letsencrypt 
     ports:
       - 80:80 # port binding
       - 443:443

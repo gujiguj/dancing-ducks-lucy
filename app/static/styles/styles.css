@@ -72,7 +72,7 @@ p {
     align-items: center;
 }
 
-#intro .links {
+.links {
     display:flex;
     flex-direction: row;
     justify-content: center;
@@ -101,28 +101,33 @@ p {
     background-color: #F4D6B6;
     border-radius: 15px;
     transition: transform 0.5s;
+    padding: 30px;
 }
 
 .experience:hover {
     transform: scale(1.05);
 }
 
-#projects .links {
-    display:flex;
-    flex-direction: row;
-    justify-content: center;
-}
-
 .project {
     height: 20vw;
     width: 20vw;
     text-align: center;
+    color:black;
     background-color: #F4D6B6;
     margin: 0vw 2vw;
     border-radius: 15px;
     transition: transform 0.5s;
+    padding: 30px;
 }
 
 .project:hover {
     transform: scale(1.05);
+}
+
+#hobbies {
+    padding: 0 8vw;
+}
+
+#hobbies .hobby {
+    margin-bottom: 25px;
 }

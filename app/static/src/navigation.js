@@ -1,7 +1,13 @@
 'use strict';
 
+/* 
+ * NavButton Component
+ * Properties:
+ *    link: contains the link/href
+ *    className: contains CSS classnames for visual effects when selected/not selected
+ *    onClick: onClick function which is the handleClick function of the parent NavBar Component
+ */
 function NavButton(props) {
-    console.log(props.classNames)
     return (
         <a href={props.link} className={props.classNames} onClick={props.onClick}>
             {props.value}
@@ -9,6 +15,14 @@ function NavButton(props) {
     );
   }
 
+/*
+ * NavBar Component
+ * Properties: N/A
+ * State:
+ *   selected: a string that contains the name of the currently active page section. Initializes as "intro".
+ * Functions:
+ *   handleClick: changes the state, setting selected to the passed page
+ */
 class NavBar extends React.Component {
     constructor(props) {
         super(props);
@@ -46,6 +60,12 @@ class NavBar extends React.Component {
                     classNames={this.state.selected == "experience" ? "nav-button selected" : "nav-button"}
                 />
                 <NavButton
+                    link="#projects"
+                    value="Projects"
+                    onClick={() => this.handleClick("projects")}
+                    classNames={this.state.selected == "projects" ? "nav-button selected" : "nav-button"}
+                />
+                <NavButton
                     link="#hobbies"
                     value="Hobbies"
                     onClick={() => this.handleClick("hobbies")}
@@ -68,6 +88,7 @@ class NavBar extends React.Component {
     }
 }
 
+/* Renders this code into the selected div */
 let domContainer = document.querySelector('#navbar_container');
 let root = ReactDOM.createRoot(domContainer);
 root.render(<NavBar />);

@@ -38,34 +38,37 @@ fellows = {
             {
                 "name": "Somnia",
                 "desc": "A college simulator game integrating a rhythm game and a visual novel made with Godot.",
-                "technologies": "", 
+                "technologies": "",
+                "link": "https://github.com/gujiguj/CSC4700_SEProject2022_Somnia", 
             },
             {
                 "name": "Portfolio",
                 "desc": "The site you're looking at!",
                 "technologies": "",
+                "link": "https://github.com/gujiguj/dancing-ducks-lucy",
             },
             {
                 "name": "Three Turtles",
                 "desc": "A 3D web animation made with Three JS.",
                 "technologies": "",
+                "link": "https://github.com/gujiguj/Three-Tortoises-Animation",
             },
         ],
         "hobbies": [
             {
                 "name": "Art",
                 "image": "/static/img/artwork.png",
-                "desc": "I've been drawing in an anime/manga style since I was very young. I like drawing cute designs and designs that I find beautiful. While I often find myself unable to think of what to draw, I become super driven when I'm drawing for other people. Nothing makes me happier than creating for others!"
+                "desc": "👩‍🎨 I've been drawing in an anime/manga style since I was very young. I like drawing cute designs and designs that I find beautiful. While I often find myself unable to think of what to draw, I become super driven when I'm drawing for other people. Nothing makes me happier than creating for others!"
             },
             {
                 "name": "Gaming",
                 "image": "/static/img/genshin.jpg",
-                "desc": "I'm a casual gamer. I only own a Macbook so I can't play a lot of games, so I just dabble in some mobile games! I mainly play an RPG called Genshin Impact, but I also play some of a tower defense game called Arknights. As for computer games, I'm currently playing the indie platformer Celeste! I've also casually played Minecraft, Terraria, and Portal.",
+                "desc": "🎮 I'm a casual gamer. I only own a Macbook so I can't play a lot of games, so I just dabble in some mobile games! I mainly play an RPG called Genshin Impact, but I also play some of a tower defense game called Arknights. As for computer games, I'm currently playing the indie platformer Celeste! I've also casually played Minecraft, Terraria, and Portal.",
             },
             {
                 "name": "Anime & Manga",
                 "image": "/static/img/chronocrusade.jpg",
-                "desc": "I love reading manga! And I also enjoy watching anime, but since it takes more time I don't do it as often :( My favorite manga is Chrono Crusade! I also love Witch Hat Atelier and Frieren at the Funeral. And my favorite anime is... it's so hard to choose! Maybe Ouran High School Host Club..."
+                "desc": "🗯 I love reading manga! And I also enjoy watching anime, but since it takes more time I don't do it as often :( My favorite manga is Chrono Crusade! I also love Witch Hat Atelier and Frieren at the Funeral. And my favorite anime is... it's so hard to choose! Maybe Ouran High School Host Club, Kaguya Wants to be Confessed To... There's a lot!"
             }
         ],
         "locations": [

@@ -1,5 +1,13 @@
 'use strict';
 
+/* 
+ * NavButton Component
+ * Properties:
+ *    link: contains the link/href
+ *    className: contains CSS classnames for visual effects when selected/not selected
+ *    onClick: onClick function which is the handleClick function of the parent NavBar Component
+ */
+
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -9,13 +17,21 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 function NavButton(props) {
-    console.log(props.classNames);
     return React.createElement(
         "a",
         { href: props.link, className: props.classNames, onClick: props.onClick },
         props.value
     );
 }
+
+/*
+ * NavBar Component
+ * Properties: N/A
+ * State:
+ *   selected: a string that contains the name of the currently active page section. Initializes as "intro".
+ * Functions:
+ *   handleClick: changes the state, setting selected to the passed page
+ */
 
 var NavBar = function (_React$Component) {
     _inherits(NavBar, _React$Component);
@@ -72,6 +88,14 @@ var NavBar = function (_React$Component) {
                     classNames: this.state.selected == "experience" ? "nav-button selected" : "nav-button"
                 }),
                 React.createElement(NavButton, {
+                    link: "#projects",
+                    value: "Projects",
+                    onClick: function onClick() {
+                        return _this2.handleClick("projects");
+                    },
+                    classNames: this.state.selected == "projects" ? "nav-button selected" : "nav-button"
+                }),
+                React.createElement(NavButton, {
                     link: "#hobbies",
                     value: "Hobbies",
                     onClick: function onClick() {
@@ -101,6 +125,9 @@ var NavBar = function (_React$Component) {
 
     return NavBar;
 }(React.Component);
+
+/* Renders this code into the selected div */
+
 
 var domContainer = document.querySelector('#navbar_container');
 var root = ReactDOM.createRoot(domContainer);

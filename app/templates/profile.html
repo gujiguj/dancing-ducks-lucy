@@ -31,11 +31,9 @@
         <h2>Work Experience</h2>
         {% for entry in fellow['experience'] %}
             <div class="experience">
-                <div style="margin: 30px">
-                    <h3>{{ entry['position'] }} - {{ entry['company'] }}</h3>
-                    <p>{{ entry['dates'] }}</p>
-                    <p>{{ entry['desc'] }}</p>
-                </div>
+                <h3>{{ entry['position'] }} - {{ entry['company'] }}</h3>
+                <p>{{ entry['dates'] }}</p>
+                <p>{{ entry['desc'] }}</p>
             </div>
         {% endfor %}
     </div>
@@ -44,14 +42,23 @@
         <h2 style="text-align:center">Projects</h2>
         <div class="links">
         {% for project in fellow['projects'] %}
+            <a href="{{ project['link'] }}">
             <div class="project">
-                <div style="margin: 30px;">
-                    <h3>{{ project['name'] }}</h3>
-                    <p>{{ project['desc'] }}</p>
-                </div>
+                <h3>{{ project['name'] }}</h3>
+                <p>{{ project['desc'] }}</p>
             </div>
+            </a>
         {% endfor %}
         </div>
+    </div>
+
+    <div id="hobbies" class="flex-container">
+        <h2 style="text-align:center">Hobbies</h2>
+        {% for hobby in fellow['hobbies'] %}
+            <div class="hobby">
+                <p>{{ hobby['desc'] }}</p>
+            </div>
+        {% endfor %}
     </div>
 </div>
 {% endblock %}
